@@ -2,10 +2,10 @@
   "schema_version": 1,
   "endpoint": "https://agency-os.it/mcp",
   "oauth_resource": "https://agency-os.it/mcp",
-  "catalog_version": "2026-08-30.7",
+  "catalog_version": "2026-08-31.1",
   "server_version": "0.8.0",
-  "fingerprint": "2be6cfdca55e1e832fd9c31e066ca8e5f3656c2ed60cb13bc885f987b69e093d",
-  "tool_count": 343,
+  "fingerprint": "85524c7ea3189b16121641b71da890cf271c2abda6433b1b23c01ade6466b42a",
+  "tool_count": 348,
   "toolset_count": 31,
   "source_repository": "https://github.com/ivanmosetti07/Agency-OS",
   "plugin_repository": "https://github.com/ivanmosetti07/agency-os-plugin"
