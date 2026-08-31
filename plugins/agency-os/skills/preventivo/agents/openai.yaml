@@ -1,0 +1,13 @@
+interface:
+  display_name: "Preventivo"
+  short_description: "Preventivi completi, verificati e senza importi inventati"
+  default_prompt: "Usa $preventivo per creare o modificare questo preventivo in Agency OS."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione sicura dei preventivi Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Progetto"
+  short_description: "Crea e aggiorna progetti, team e avanzamento"
+  default_prompt: "Usa $progetto per creare o aggiornare questo progetto in Agency OS."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione progetti e relazioni Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

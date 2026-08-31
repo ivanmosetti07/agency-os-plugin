@@ -1,0 +1,13 @@
+interface:
+  display_name: "PED social"
+  short_description: "Piani editoriali e contenuti social già compilati"
+  default_prompt: "Usa $ped-social per creare o aggiornare questo piano editoriale social."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione PED, contenuti e asset Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

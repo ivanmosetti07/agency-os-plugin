@@ -1,0 +1,13 @@
+interface:
+  display_name: "Operazioni Agency OS"
+  short_description: "Workflow sicuri per leggere e modificare Agency OS"
+  default_prompt: "Usa $agency-os-operations per gestire questa richiesta in Agency OS con verifica finale."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Server MCP remoto di Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

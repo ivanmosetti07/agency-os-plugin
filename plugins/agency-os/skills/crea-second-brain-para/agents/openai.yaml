@@ -1,0 +1,6 @@
+interface:
+  display_name: "Crea nel second brain PARA"
+  short_description: "Classifica e crea contenuti nel posto corretto"
+  default_prompt: "Usa $crea-second-brain-para per aggiungere questo contenuto al mio second brain."
+policy:
+  allow_implicit_invocation: true

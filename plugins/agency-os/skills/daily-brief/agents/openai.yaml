@@ -1,0 +1,13 @@
+interface:
+  display_name: "Daily brief"
+  short_description: "Dream, priorità e allineamento della giornata"
+  default_prompt: "Usa $daily-brief per preparare il brief di oggi con dream e allineamento Agency OS-vault."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Lettura verificabile dei dati Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

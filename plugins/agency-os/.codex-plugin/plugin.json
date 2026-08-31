@@ -1,7 +1,7 @@
 {
   "name": "agency-os",
-  "version": "1.0.0",
-  "description": "Workflow sicuri per usare clienti, progetti, task, meeting e amministrazione di Agency OS tramite MCP.",
+  "version": "1.1.0",
+  "description": "Skill per Agency OS, daily brief, riconciliazione e second brain PARA tramite MCP.",
   "author": {
     "name": "Agency OS",
     "url": "https://agency-os.it"
@@ -15,6 +15,8 @@
     "clients",
     "projects",
     "tasks",
+    "editorial",
+    "para",
     "mcp"
   ],
   "skills": "./skills/",
@@ -22,8 +24,8 @@
   "apps": "./.app.json",
   "interface": {
     "displayName": "Agency OS",
-    "shortDescription": "Gestisci il lavoro dell'agenzia con controlli di sicurezza",
-    "longDescription": "Collega ChatGPT e Codex all'MCP di Agency OS e applica un flusso verificabile per letture, proposte e scritture su clienti, progetti, task, meeting, preventivi, finanza e knowledge.",
+    "shortDescription": "Agency OS e second brain PARA sempre allineati",
+    "longDescription": "Collega ChatGPT e Codex all'MCP di Agency OS e offre skill dedicate per daily brief, aggiornamento lavoro, task, progetti, clienti, business, meeting, preventivi, PED social e gestione del second brain PARA.",
     "developerName": "Agency OS",
     "category": "Productivity",
     "capabilities": [
@@ -33,9 +35,9 @@
     ],
     "websiteURL": "https://agency-os.it",
     "defaultPrompt": [
-      "Controlla le task aperte e segnala disallineamenti",
-      "Prepara un aggiornamento di stato senza pubblicarlo",
-      "Verifica clienti e progetti con copertura dichiarata"
+      "Prepara il daily brief con dream e allineamento",
+      "Crea una task compilando tutti i campi disponibili",
+      "Sistema la struttura corrente del second brain PARA"
     ],
     "brandColor": "#D4A574",
     "composerIcon": "./assets/icon.svg",

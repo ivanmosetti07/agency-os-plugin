@@ -1,6 +1,6 @@
 # Agency OS Plugin
 
-Marketplace privato multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e aggiunge una skill operativa con copertura dichiarata, redazione alla frontiera, approvazione delle scritture e verifica post-mutazione.
+Marketplace privato multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e include skill per il lavoro operativo, il daily brief, la riconciliazione col vault e la gestione del second brain PARA.
 
 ## Struttura
 
@@ -10,7 +10,7 @@ Marketplace privato multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex
 - `plugins/agency-os/.claude-plugin/plugin.json`: manifest Claude Code.
 - `plugins/agency-os/.mcp.json`: unica configurazione MCP condivisa.
 - `plugins/agency-os/.app.json`: collegamento alla connessione ChatGPT già registrata.
-- `plugins/agency-os/skills/agency-os-operations`: workflow operativo condiviso.
+- `plugins/agency-os/skills/`: skill condivise da Claude e Codex.
 - `contract/mcp-contract.json`: contratto di allineamento col catalogo server.
 
 ## Installazione Codex
@@ -31,6 +31,14 @@ Apri `/plugins`, seleziona il marketplace **Agency OS** e installa il plugin. Av
 ```
 
 Completa l'OAuth Agency OS quando richiesto. Il repository non contiene password, token o chiavi API.
+
+L'aggiunta del marketplace non installa automaticamente il plugin: dopo il primo comando esegui sempre anche `/plugin install`. Dopo un aggiornamento delle skill, aggiorna il marketplace e il plugin e apri una nuova sessione per ricaricarle.
+
+## Skill
+
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
+
+Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
 ## Verifica
 

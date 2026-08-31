@@ -1,6 +1,6 @@
 ---
 name: agency-os-operations
-description: Usa Agency OS tramite MCP per leggere, riconciliare, proporre o applicare modifiche a clienti, business, progetti, task, meeting, preventivi, contratti, finanza, chat, knowledge e allegati. Attivala quando il lavoro riguarda il gestionale Agency OS o l'allineamento con un sistema operativo personale.
+description: Workflow generale e fallback per operazioni trasversali su Agency OS tramite MCP, inclusi finanza, contratti, chat, knowledge e allegati. Usala quando la richiesta attraversa più domini o non è coperta da una skill dedicata; per task, progetti, clienti, business, preventivi, meeting e PED preferisci la skill specifica.
 ---
 
 # Operazioni Agency OS
@@ -47,6 +47,8 @@ Clienti, progetti, task, meeting, chat, knowledge, asset ed editoriale possono e
 Usa preventivi, finanza, contratti e lead per le informazioni amministrative. La spesa pubblicitaria può restare nella delivery quando è già visibile al cliente. Redigi i dati sensibili prima della persistenza, non con una pulizia successiva.
 
 ## 6. Applica le cautele operative
+
+Leggi [campi-e-mutazioni.md](./references/campi-e-mutazioni.md) prima di creare o modificare qualunque entità. Precompila tutto ciò che è ricavabile senza ambiguità e chiedi in un solo messaggio i soli campi obbligatori rimasti scoperti.
 
 Leggi [controlli-di-sicurezza.md](./references/controlli-di-sicurezza.md) prima di operare su preventivi, lead, spese, calendario o archiviazioni.
 

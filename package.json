@@ -1,9 +1,9 @@
 {
   "name": "agency-os-plugin-marketplace",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node scripts/check-alignment.mjs && node scripts/privacy-check.mjs"
+    "check": "node scripts/check-alignment.mjs && node scripts/check-skills.mjs && node scripts/privacy-check.mjs"
   }
 }
