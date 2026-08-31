@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "agency-os",
+  "version": "1.0.0",
+  "description": "Workflow sicuri per usare Agency OS tramite l'MCP remoto autenticato.",
+  "author": {
+    "name": "Agency OS",
+    "url": "https://agency-os.it"
+  },
+  "homepage": "https://agency-os.it/mcp/install",
+  "repository": "https://github.com/ivanmosetti07/agency-os-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "agency-os",
+    "clients",
+    "projects",
+    "tasks",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

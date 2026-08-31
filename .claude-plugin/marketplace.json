@@ -1,0 +1,14 @@
+{
+  "name": "agency-os",
+  "owner": {
+    "name": "Agency OS"
+  },
+  "description": "Plugin privati e workflow verificabili per Agency OS.",
+  "plugins": [
+    {
+      "name": "agency-os",
+      "source": "./plugins/agency-os",
+      "description": "Collega Claude Code all'MCP Agency OS e applica workflow sicuri di lettura, proposta e scrittura."
+    }
+  ]
+}

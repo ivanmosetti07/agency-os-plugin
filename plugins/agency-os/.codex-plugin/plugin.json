@@ -1,0 +1,46 @@
+{
+  "name": "agency-os",
+  "version": "1.0.0",
+  "description": "Workflow sicuri per usare clienti, progetti, task, meeting e amministrazione di Agency OS tramite MCP.",
+  "author": {
+    "name": "Agency OS",
+    "url": "https://agency-os.it"
+  },
+  "homepage": "https://agency-os.it/mcp/install",
+  "repository": "https://github.com/ivanmosetti07/agency-os-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "agency-os",
+    "agency-management",
+    "clients",
+    "projects",
+    "tasks",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Agency OS",
+    "shortDescription": "Gestisci il lavoro dell'agenzia con controlli di sicurezza",
+    "longDescription": "Collega ChatGPT e Codex all'MCP di Agency OS e applica un flusso verificabile per letture, proposte e scritture su clienti, progetti, task, meeting, preventivi, finanza e knowledge.",
+    "developerName": "Agency OS",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://agency-os.it",
+    "defaultPrompt": [
+      "Controlla le task aperte e segnala disallineamenti",
+      "Prepara un aggiornamento di stato senza pubblicarlo",
+      "Verifica clienti e progetti con copertura dichiarata"
+    ],
+    "brandColor": "#D4A574",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg",
+    "logoDark": "./assets/logo-dark.svg",
+    "screenshots": []
+  }
+}

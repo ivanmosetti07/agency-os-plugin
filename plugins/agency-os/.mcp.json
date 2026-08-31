@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "agency-os": {
+      "type": "http",
+      "url": "https://agency-os.it/mcp",
+      "oauth_resource": "https://agency-os.it/mcp"
+    }
+  }
+}
