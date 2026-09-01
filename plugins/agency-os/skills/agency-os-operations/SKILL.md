@@ -31,6 +31,8 @@ Per ogni lista o confronto registra almeno: agenzia, tipo di entità, limite ric
 
 Quando lavori su più agenzie, passa l'identificativo dell'agenzia a ogni tool che lo supporta. Non interpretare `resource_not_found` come un problema di permessi prima di aver verificato il contesto agenzia.
 
+Per Economics e Qonto, considera sempre indivisibile la coppia agenzia–conto collegato: risolvi prima l'agenzia attiva, non riusa risultati o identificativi ottenuti sotto un'altra agenzia e non sommare conti diversi. Se il conto selezionato è assente, chiuso o non verificabile, fermati con un errore esplicito; non scegliere un conto alternativo. Fatture e movimenti Qonto non attribuiti in modo deterministico restano esclusi da totali e analisi.
+
 ## 4. Distingui dichiarazioni e prove
 
 Uno stato di successo non prova che la mutazione sia avvenuta. Cerca l'identificativo creato, `changed_fields`, il timestamp pertinente o una rilettura della superficie primaria.
@@ -45,6 +47,8 @@ Uno stato di successo non prova che la mutazione sia avvenuta. Cerca l'identific
 Clienti, progetti, task, meeting, chat, knowledge, asset ed editoriale possono essere letti da collaboratori autorizzati. Non inserire importi, condizioni economiche o segreti in testo libero su queste superfici.
 
 Usa preventivi, finanza, contratti e lead per le informazioni amministrative. La spesa pubblicitaria può restare nella delivery quando è già visibile al cliente. Redigi i dati sensibili prima della persistenza, non con una pulizia successiva.
+
+`qonto_id` è un campo di provenienza in sola lettura: non inviarlo nei tool di creazione o modifica di fatture. Solo il sincronizzatore Qonto può creare o aggiornare documenti marcati con un identificativo Qonto.
 
 ## 6. Applica le cautele operative
 

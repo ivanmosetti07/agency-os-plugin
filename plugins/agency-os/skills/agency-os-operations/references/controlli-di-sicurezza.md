@@ -15,6 +15,9 @@
 
 - Prima di creare una spesa ricorrente, verifica se un'integrazione bancaria la importa automaticamente.
 - Usa una chiave idempotente stabile e verifica il record creato per evitare duplicati dopo retry.
+- Per dati Qonto, risolvi l'agenzia e il suo conto collegato prima di leggere o riconciliare movimenti. Non usare il primo conto disponibile, non aggregare tutti i conti e non mantenere risultati dopo un cambio agenzia.
+- Non includere nei totali transazioni o fatture prive di un collegamento deterministico al conto dell'agenzia attiva.
+- Non impostare o modificare `qonto_id`: è riservato al sincronizzatore Qonto.
 
 ## Calendario e meeting
 

@@ -2,6 +2,8 @@
 
 Marketplace privato multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e include skill per il lavoro operativo, il daily brief, la riconciliazione col vault e la gestione del second brain PARA.
 
+La versione `1.3.0` è allineata al catalogo `2026-09-01.1` e al server contract `0.8.1`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
+
 ## Struttura
 
 - `.agents/plugins/marketplace.json`: marketplace ChatGPT/Codex.
