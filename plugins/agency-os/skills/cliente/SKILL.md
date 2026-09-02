@@ -17,4 +17,4 @@ Precompila agenzia, tipo, anagrafica, settore, contatti, owner, team, note opera
 
 Leggi cliente, lead, progetti, task, preventivi e contratti collegati. Applica soltanto il delta e non sovrascrivere note o contatti non citati. Prima di archiviare elenca i riferimenti ancora attivi: nessuna entità si chiude automaticamente a cascata.
 
-Per il riquadro “Aggiornamento” usa l'interfaccia dedicata, precompilando semaforo, sintesi, blocchi e prossimi passi. Se non puoi pubblicarlo dal browser, fornisci il testo pronto e non dichiararlo aggiornato.
+Per il riquadro “Aggiornamento” usa `publish_entity_update` (`entity_type: "client"`), precompilando semaforo, sintesi, blocchi e prossimi passi e mostrando l'anteprima prima di pubblicare: la risposta deve dire `recognized_by_ui: true`. Se la pubblicazione non riesce, fornisci il testo pronto e non dichiararlo aggiornato.

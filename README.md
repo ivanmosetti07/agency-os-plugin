@@ -44,6 +44,10 @@ L'aggiunta del marketplace non installa automaticamente il plugin: dopo il primo
 
 Il profilo compatto espone pochi tool nativi e tre esecutori. Per scoprire un tool: `search_tools` con parole chiave in italiano (task, cliente, preventivo, meeting, stato), poi `describe_tool` con il nome esatto — restituisce schema, esempio di chiamata, alias degli identificativi (`id` contro `task_id`) ed esecutore da usare, in una sola chiamata. `list_toolsets` mostra tutti i 31 domini in una pagina. I meta-tool accettano numeri e array anche serializzati come stringhe (`limit: "10"`, `names: "get_task,list_tasks"`), perché alcuni client non ricevono gli schemi. Il server dichiara inoltre `instructions` in `initialize` con le stesse convenzioni.
 
+## Scritture verificabili
+
+Per il riquadro «Aggiornamento» di clienti e progetti usa `publish_entity_update` (semaforo `health` e sintesi `summary` obbligatori, `blockers` e `next_steps` opzionali): è la stessa scrittura del pannello della web app e risponde `recognized_by_ui: true` con `valid_until`. `update_entity_state` con il solo `content` salva una versione che la scheda non mostra e lo dichiara in `warnings[state_not_recognized_by_ui]`. Gli `update_*` di task, cliente, progetto, meeting e preventivo restituiscono `changed_fields` con le sole colonne cambiate davvero (`meta.changed_fields_source: verified`); per azzerare un campo passa `null` esplicito. Gli stati task `blocked`, `next` e `backlog` sono alias convertiti e segnalati in `warnings[status_alias]`.
+
 ## Skill
 
 Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.

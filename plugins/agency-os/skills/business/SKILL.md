@@ -15,4 +15,4 @@ Verifica agenzia e tipo `business`, cerca omonimi e precompila nome, descrizione
 
 Leggi prima business, progetti, membri e attività collegate. Conserva i campi non richiesti, applica il delta minimo e verifica la scheda primaria. Prima di archiviare mostra tutti i riferimenti attivi.
 
-L'“Aggiornamento” periodico con semaforo, sintesi, blocchi e prossimi passi deve passare dalla relativa interfaccia. Precompilalo dai fatti osservati; se non è possibile pubblicarlo dal browser, restituisci una bozza completa senza dichiarare la pubblicazione.
+L'“Aggiornamento” periodico con semaforo, sintesi, blocchi e prossimi passi si pubblica con `publish_entity_update` (`entity_type: "client"`, semaforo e sintesi obbligatori): è la stessa scrittura del pannello web e risponde `recognized_by_ui: true`. Precompilalo dai fatti osservati e mostra l'anteprima prima di pubblicare; una versione senza semaforo (`update_entity_state` con il solo `content`) non aggiorna la scheda e non va dichiarata pubblicata.
