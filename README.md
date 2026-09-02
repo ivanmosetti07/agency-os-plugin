@@ -2,7 +2,7 @@
 
 Marketplace privato multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e include skill per il lavoro operativo, il daily brief, la riconciliazione col vault e la gestione del second brain PARA.
 
-La versione `1.3.0` è allineata al catalogo `2026-09-01.1` e al server contract `0.8.1`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
+La versione `1.3.1` è allineata al catalogo `2026-09-03.1` e al server contract `0.9.0`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
 
 ## Struttura
 
@@ -27,14 +27,22 @@ Apri `/plugins`, seleziona il marketplace **Agency OS** e installa il plugin. Av
 
 ## Installazione Claude Code
 
+L'autorizzazione OAuth apre il browser: va completata **una volta da un terminale interattivo**. Le sessioni avviate da Cowork, da Claude Desktop o con `claude -p` non possono aprirlo: registrano il client e si fermano prima dell'autorizzazione, e il plugin resta senza token.
+
 ```text
-/plugin marketplace add ivanmosetti07/agency-os-plugin
+claude
+/plugin marketplace update agency-os
 /plugin install agency-os@agency-os
+/mcp   →  plugin:agency-os:agency-os  →  Authenticate
 ```
 
-Completa l'OAuth Agency OS quando richiesto. Il repository non contiene password, token o chiavi API.
+Il browser mostra la pagina di consenso di Agency OS e torna su `localhost`. Da lì in poi il token vale sette giorni e si rinnova da solo; un logout dalla web app non lo revoca. Il repository non contiene password, token o chiavi API.
 
 L'aggiunta del marketplace non installa automaticamente il plugin: dopo il primo comando esegui sempre anche `/plugin install`. Dopo un aggiornamento delle skill, aggiorna il marketplace e il plugin e apri una nuova sessione per ricaricarle.
+
+## Discovery
+
+Il profilo compatto espone pochi tool nativi e tre esecutori. Per scoprire un tool: `search_tools` con parole chiave in italiano (task, cliente, preventivo, meeting, stato), poi `describe_tool` con il nome esatto — restituisce schema, esempio di chiamata, alias degli identificativi (`id` contro `task_id`) ed esecutore da usare, in una sola chiamata. `list_toolsets` mostra tutti i 31 domini in una pagina. I meta-tool accettano numeri e array anche serializzati come stringhe (`limit: "10"`, `names: "get_task,list_tasks"`), perché alcuni client non ricevono gli schemi. Il server dichiara inoltre `instructions` in `initialize` con le stesse convenzioni.
 
 ## Skill
 
