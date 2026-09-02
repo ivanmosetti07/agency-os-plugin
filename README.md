@@ -48,6 +48,10 @@ Il profilo compatto espone pochi tool nativi e tre esecutori. Per scoprire un to
 
 Per il riquadro «Aggiornamento» di clienti e progetti usa `publish_entity_update` (semaforo `health` e sintesi `summary` obbligatori, `blockers` e `next_steps` opzionali): è la stessa scrittura del pannello della web app e risponde `recognized_by_ui: true` con `valid_until`. `update_entity_state` con il solo `content` salva una versione che la scheda non mostra e lo dichiara in `warnings[state_not_recognized_by_ui]`. Gli `update_*` di task, cliente, progetto, meeting e preventivo restituiscono `changed_fields` con le sole colonne cambiate davvero (`meta.changed_fields_source: verified`); per azzerare un campo passa `null` esplicito. Gli stati task `blocked`, `next` e `backlog` sono alias convertiti e segnalati in `warnings[status_alias]`.
 
+## Risposte e paginazione
+
+`structuredContent` porta solo l'envelope: il risultato è in `data`, versione e paginazione in `meta`, accanto `warnings`, `changed_fields` e `next_actions`; le chiavi storiche duplicate accanto a `data` non ci sono più (`?envelope=legacy` sull'endpoint le ripristina). Ogni `list_*` e `get_*` accetta `verbosity` — `standard` (default) nelle liste tronca i testi a 280 caratteri, riassume la checklist e omette i blob; `full` riga intera; `compact` solo campi chiave — e `fields` (CSV dei campi voluti); ogni taglio è in `warnings[fields_omitted]`. Le liste espongono `meta.page`, `has_more` e `next_cursor`; `total_matches` è il totale vero per task, clienti, progetti, lead, meeting, fatture e preventivi, altrove la finestra è di 200 righe e `meta.window_saturated: true` dice che il totale non è noto: restringi i filtri.
+
 ## Skill
 
 Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
