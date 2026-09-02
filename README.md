@@ -52,6 +52,10 @@ Per il riquadro «Aggiornamento» di clienti e progetti usa `publish_entity_upda
 
 `structuredContent` porta solo l'envelope: il risultato è in `data`, versione e paginazione in `meta`, accanto `warnings`, `changed_fields` e `next_actions`; le chiavi storiche duplicate accanto a `data` non ci sono più (`?envelope=legacy` sull'endpoint le ripristina). Ogni `list_*` e `get_*` accetta `verbosity` — `standard` (default) nelle liste tronca i testi a 280 caratteri, riassume la checklist e omette i blob; `full` riga intera; `compact` solo campi chiave — e `fields` (CSV dei campi voluti); ogni taglio è in `warnings[fields_omitted]`. Le liste espongono `meta.page`, `has_more` e `next_cursor`; `total_matches` è il totale vero per task, clienti, progetti, lead, meeting, fatture e preventivi, altrove la finestra è di 200 righe e `meta.window_saturated: true` dice che il totale non è noto: restringi i filtri.
 
+## Effetti delle scritture
+
+Le scritture producono gli stessi effetti della web app. `create_task`, `update_task`, `assign_task` e `set_task_responsible` notificano gli assegnatari nuovi e rispondono `notifications {requested, status}`; `add_task_comment` avvisa partecipanti e menzionati (formato `@[Nome](member:uuid)`) e riporta i conteggi. `create_meeting` pianifica i reminder al contatto del cliente; `cancel_meeting` cancella l'evento Google, salta i reminder e avvisa i contatti; `delete_meeting` cancella prima su Google (`delete_from_google`, default true) e, se fallisce, lascia il meeting. `accept_quote` converte l'opportunità e promuove il lead a cliente: `update_quote` non accetta `status: accepted` e non riapre un preventivo accettato. Gli orari di lavoro accettano `{version: 1, days: {...}}` e la forma piatta, e `set_my_work_availability` è self-service anche per i collaboratori.
+
 ## Skill
 
 Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
