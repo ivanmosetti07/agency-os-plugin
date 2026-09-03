@@ -56,6 +56,10 @@ Per il riquadro «Aggiornamento» di clienti e progetti usa `publish_entity_upda
 
 Le scritture producono gli stessi effetti della web app. `create_task`, `update_task`, `assign_task` e `set_task_responsible` notificano gli assegnatari nuovi e rispondono `notifications {requested, status}`; `add_task_comment` avvisa partecipanti e menzionati (formato `@[Nome](member:uuid)`) e riporta i conteggi. `create_meeting` pianifica i reminder al contatto del cliente; `cancel_meeting` cancella l'evento Google, salta i reminder e avvisa i contatti; `delete_meeting` cancella prima su Google (`delete_from_google`, default true) e, se fallisce, lascia il meeting. `accept_quote` converte l'opportunità e promuove il lead a cliente: `update_quote` non accetta `status: accepted` e non riapre un preventivo accettato. Gli orari di lavoro accettano `{version: 1, days: {...}}` e la forma piatta, e `set_my_work_availability` è self-service anche per i collaboratori.
 
+## Ricerca per nome
+
+`search` copre clienti, progetti, task, meeting, preventivi e playbook con id tipizzati (`client:<uuid>`, `task:<uuid>`, …) e URL della web app; `fetch` legge l'elemento dal suo id tipizzato. `list_tasks` espone `assignee_ids` e `responsible_ids`; `list_clients` esclude i lead salvo `include_leads: true` o `status: "lead"`; `list_leads.stage` usa gli stage reali (`new`, `qualification`, `negotiation`, `won`, `lost`); `get_dashboard_stats` conta solo i progetti `planning`, `active`, `paused` e i lead della pipeline. Un campo chiesto con `fields` che non esiste finisce in `warnings[fields_unknown]`.
+
 ## Skill
 
 Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
