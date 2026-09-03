@@ -58,7 +58,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Ricerca per nome
 
-`search` copre clienti, progetti, task, meeting, preventivi e playbook con id tipizzati (`client:<uuid>`, `task:<uuid>`, …) e URL della web app; `fetch` legge l'elemento dal suo id tipizzato. `list_tasks` espone `assignee_ids` e `responsible_ids`; `list_clients` esclude i lead salvo `include_leads: true` o `status: "lead"`; `list_leads.stage` usa gli stage reali (`new`, `qualification`, `negotiation`, `won`, `lost`); `get_dashboard_stats` conta solo i progetti `planning`, `active`, `paused` e i lead della pipeline. Un campo chiesto con `fields` che non esiste finisce in `warnings[fields_unknown]`.
+`search` copre clienti, progetti, task, meeting, preventivi e playbook con id tipizzati (`client:<uuid>`, `task:<uuid>`, …) e URL della web app; `fetch` legge l'elemento dal suo id tipizzato. `list_tasks` espone `assignee_ids` e `responsible_ids`; `list_clients` esclude i lead salvo `include_leads: true` o `status: "lead"`; `list_leads.stage` usa gli stage reali (`new`, `qualification`, `negotiation`, `won`, `lost`); `get_dashboard_stats` conta solo i progetti `planning`, `active`, `paused` e i lead della pipeline. Un campo chiesto con `fields` che non esiste finisce in `warnings[fields_unknown]`. `search` e `fetch` sono visibili a ogni token (lo scope decide quali entità entrano); nei `get_*` la proiezione con `fields` colpisce l'entità e non gli array collegati; `verbosity: "compact"` conserva `assignee_ids`; `get_client_health` conta i progetti come la scheda cliente.
 
 ## Skill
 
