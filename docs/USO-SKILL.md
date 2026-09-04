@@ -6,7 +6,7 @@ Le skill possono attivarsi dal linguaggio naturale. In Codex si possono richiama
 
 | Skill | Scopo |
 |---|---|
-| `daily-brief` | Dream giornaliero, calendario, vault e riconciliazione Agency OS in sola lettura |
+| `daily-brief` | Brief della giornata in forma fissa: chiusure, calendario, priorità, deleghe, agenti, scadenze, salute e riconciliazione Agency OS in sola lettura |
 | `aggiorna-lavoro` | Chiusura sessione, backlog, registri e lotto di allineamento vault-Agency OS |
 | `task` | Task, checklist, assegnatari, date, attività e notifiche |
 | `progetto` | Progetti, team, workflow, KPI e aggiornamento periodico |

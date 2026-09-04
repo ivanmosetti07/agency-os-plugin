@@ -1,7 +1,7 @@
 interface:
   display_name: "Daily brief"
-  short_description: "Dream, priorità e allineamento della giornata"
-  default_prompt: "Usa $daily-brief per preparare il brief di oggi con dream e allineamento Agency OS-vault."
+  short_description: "Il brief della giornata in forma fissa"
+  default_prompt: "Usa $daily-brief per preparare il brief di oggi con priorità, deleghe, scadenze e allineamento vault-Agency OS."
 dependencies:
   tools:
     - type: "mcp"
