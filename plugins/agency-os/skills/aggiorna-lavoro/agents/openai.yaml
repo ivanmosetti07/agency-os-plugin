@@ -1,12 +1,12 @@
 interface:
   display_name: "Aggiorna lavoro"
-  short_description: "Chiude la sessione e riallinea vault e Agency OS"
-  default_prompt: "Usa $aggiorna-lavoro per aggiornare il lavoro svolto e riconciliare vault e Agency OS."
+  short_description: "Chiude la sessione, aggiorna il vault e prepara il lotto per Agency OS"
+  default_prompt: "Usa $aggiorna-lavoro per aggiornare il lavoro svolto e preparare la riconciliazione con Agency OS."
 dependencies:
   tools:
     - type: "mcp"
       value: "agency-os"
-      description: "Lettura e aggiornamento approvato di Agency OS"
+      description: "Lettura di Agency OS e preparazione del lotto da approvare a parte"
       transport: "streamable_http"
       url: "https://agency-os.it/mcp"
 policy:
