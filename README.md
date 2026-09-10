@@ -80,3 +80,7 @@ Il secondo comando confronta endpoint, versione, fingerprint e numero di tool co
 Il pacchetto contiene soltanto configurazione pubblicabile, documentazione generica e identificativi tecnici non segreti. Non inserire nomi di clienti, percorsi personali, ID tenant, fotografie operative, snapshot, importi, token o variabili d'ambiente.
 
 Licenza proprietaria. Uso riservato agli utenti autorizzati di Agency OS.
+
+## Aggiornamento 1.5.1
+
+Riconciliazione secondo la fonte principale scelta dall’utente; viste PARA leggere e datate. Daily brief e chiusura sessione rispettano le autorizzazioni già concesse per operazioni certe, verificano le scritture e pongono domande esplicite sui dubbi. Il default resta lettura e proposta quando manca una delega esplicita.

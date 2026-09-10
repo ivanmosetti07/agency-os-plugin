@@ -13,7 +13,7 @@ Determina se l'utente chiede una lettura, una proposta o una scrittura.
 
 - Per una lettura, non mutare dati.
 - Per una proposta, prepara un lotto verificabile e fermati prima dell'applicazione.
-- Per una scrittura, mostra prima il lotto e ottieni approvazione esplicita se non è già stata data sul contenuto esatto.
+- Per una scrittura, prepara il diff e applica l’autorizzazione già data dall’utente nello scope richiesto. Se ha autorizzato le operazioni certe, usa i criteri di riconciliazione senza chiedere un nuovo sì per ogni riga. Se manca autorizzazione o c’è un dubbio, chiedi esplicitamente prima dell’operazione interessata.
 - Non ampliare una richiesta di diagnosi in una correzione.
 
 ## 2. Scopri il catalogo corrente
