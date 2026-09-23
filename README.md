@@ -81,6 +81,16 @@ Il pacchetto contiene soltanto configurazione pubblicabile, documentazione gener
 
 Licenza proprietaria. Uso riservato agli utenti autorizzati di Agency OS.
 
+## Aggiornamento 1.6.0
+
+Allineato al catalogo MCP 2026-09-23.1 (server 0.14.0, 350 tool).
+- Gli input dei tool sono rigidi: un campo non previsto restituisce un errore invece di sparire.
+- Gli argomenti degli executor vanno dentro `arguments`; quelli fuori vengono spostati con un avviso.
+- Nuovo `get_task_history` per la cronologia delle modifiche fatte da UI, MCP e sistema.
+- Brand Identity e Analisi di Mercato si ripuliscono con `mode`, `remove_paths` e `prune_legacy`; i campi legacy non visibili in UI accettano solo `null`.
+- Le opportunità si vincono solo con `accept_quote`.
+- Le liste dichiarano nel testo se ci sono altre pagine.
+
 ## Aggiornamento 1.5.1
 
 Riconciliazione secondo la fonte principale scelta dall’utente; viste PARA leggere e datate. Daily brief e chiusura sessione rispettano le autorizzazioni già concesse per operazioni certe, verificano le scritture e pongono domande esplicite sui dubbi. Il default resta lettura e proposta quando manca una delega esplicita.
