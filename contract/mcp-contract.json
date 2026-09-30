@@ -11,5 +11,6 @@
   "marketplaces": {
     "codex": ".agents/plugins/marketplace.json",
     "claude": ".claude-plugin/marketplace.json"
-  }
+  },
+  "widget_bridge_version": "2026-09-30.1"
 }

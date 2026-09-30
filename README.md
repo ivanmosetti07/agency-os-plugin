@@ -136,3 +136,27 @@ Il workbench carica le pagine task tramite `execute_read_tool`: lo schema e i pe
 Il pacchetto cloud è stato accettato da Plugin Creator come plugin personale privato, distinto dal plugin generato direttamente dalla connessione MCP. Il plugin generato dall’app non è modificabile con Plugin Creator; il pacchetto personalizzato può invece ricevere nuove versioni con `update_plugin`, usando ID e release correnti restituiti dal connettore. L’aggiornamento conserva connessione, file omessi e pubblico esistente.
 
 Logo ufficiale e 12 skill restano inclusi. I suggerimenti iniziali aprono le task, preparano il daily brief o creano una task; la skill task preferisce il workbench con tabella, board e calendario e gestisce gli schemi in cache e i caricamenti parziali. GitHub resta la fonte dei file: nel profilo personale gli aggiornamenti si applicano con Plugin Creator, non con una sincronizzazione automatica GitHub.
+
+## Aggiornamento 1.6.6 — Ripristino della connessione MCP
+
+La precedente app registrata rispondeva `Plugin not found`. Il pacchetto conserva identità e skill e punta alla nuova registrazione verificata sullo stesso endpoint OAuth `https://agency-os.it/mcp`. L'account è stato ricollegato tramite il flusso ChatGPT autorizzato dall'utente. Il sottotitolo rispetta il limite di 30 caratteri.
+
+Il pannello 1.6.6 supporta il bridge compatibile ChatGPT per il caricamento dei metadati completi e l’aggiornamento delle task. Il contratto registra anche la revisione del bridge UI.
+
+## Codex: installazione unica 1.7.0
+
+Il pacchetto dedicato `codex/plugins/agency-os` contiene MCP HTTP con OAuth, le 12 skill e il logo. Non richiede una app ChatGPT né una seconda configurazione manuale del server. Il pacchetto Claude resta separato e invariato.
+
+```sh
+codex plugin marketplace add ivanmosetti07/agency-os-plugin
+codex plugin add agency-os@agency-os-plugin
+```
+
+Per aggiornare dal repository GitHub:
+
+```sh
+codex plugin marketplace upgrade agency-os-plugin
+codex plugin add agency-os@agency-os-plugin
+```
+
+Dopo aver verificato il plugin, disabilitare l'eventuale server Agency OS configurato manualmente e la precedente copia cloud in Codex. Le connessioni in ChatGPT e Claude restano indipendenti.

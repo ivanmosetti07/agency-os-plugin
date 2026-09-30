@@ -1,6 +1,6 @@
 {
   "name": "dev-6a1fdf46973081919854c960a2d7adbb",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "Skill per Agency OS, daily brief, riconciliazione e second brain PARA tramite MCP.",
   "author": {
     "name": "Agency OS",
@@ -25,7 +25,7 @@
       "apps": "./.app.json",
       "interface": {
         "displayName": "Agency OS",
-        "shortDescription": "Task, clienti e progetti in ChatGPT",
+        "shortDescription": "Task, clienti e progetti",
         "longDescription": "Gestisci Agency OS in ChatGPT: task con filtri e viste tabella, board e calendario, clienti, progetti e PED social. Include daily brief, aggiornamento lavoro e gestione del second brain PARA tramite la tua connessione MCP.",
         "developerName": "Agency OS",
         "category": "Productivity",

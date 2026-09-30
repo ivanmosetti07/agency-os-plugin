@@ -16,7 +16,9 @@ function assert(condition, message) {
 const contract = await json(resolve(root, "contract/mcp-contract.json"));
 const mcp = await json(resolve(pluginRoot, ".mcp.json"));
 const app = await json(resolve(pluginRoot, ".app.json"));
-const codex = await json(resolve(pluginRoot, ".codex-plugin/plugin.json"));
+const codexRoot = resolve(root, "codex/plugins/agency-os");
+const codex = await json(resolve(codexRoot, ".codex-plugin/plugin.json"));
+const codexMcp = await json(resolve(codexRoot, ".mcp.json"));
 const claude = await json(resolve(pluginRoot, ".claude-plugin/plugin.json"));
 const codexMarketplace = await json(resolve(root, ".agents/plugins/marketplace.json"));
 const claudeMarketplace = await json(resolve(root, ".claude-plugin/marketplace.json"));
@@ -26,11 +28,13 @@ assert(server?.type === "http", "Il server MCP deve usare Streamable HTTP.");
 assert(server.url === contract.endpoint, "Endpoint MCP non allineato al contratto.");
 assert(server.oauth_resource === contract.oauth_resource, "OAuth resource non allineata al contratto.");
 assert(codex.name === "agency-os" && claude.name === "agency-os", "I manifest devono condividere il nome agency-os.");
-assert(codex.version === claude.version, "Le versioni Claude e Codex devono coincidere.");
+assert(codex.version === "1.7.0", "Versione Codex inattesa.");
+assert(!codex.apps, "Codex deve usare soltanto il server MCP incluso.");
+assert(JSON.stringify(codexMcp) === JSON.stringify(mcp), "Endpoint Codex divergente.");
 assert(codex.mcpServers === "./.mcp.json" && claude.mcpServers === "./.mcp.json", "Entrambi i manifest devono usare lo stesso .mcp.json.");
-assert(codex.apps === "./.app.json", "Il manifest Codex deve collegare .app.json.");
+
 assert(/^asdk_app_[a-z0-9]+$/.test(app.apps?.["agency-os"]?.id ?? ""), "ID app ChatGPT assente o non valido.");
-assert(codexMarketplace.plugins?.[0]?.source?.path === "./plugins/agency-os", "Marketplace Codex non allineato.");
+assert(codexMarketplace.plugins?.[0]?.source?.path === "./codex/plugins/agency-os", "Marketplace Codex non allineato.");
 assert(claudeMarketplace.plugins?.[0]?.source === "./plugins/agency-os", "Marketplace Claude non allineato.");
 
 const cloudRoot = resolve(root, "cloud/plugins/agency-os");
@@ -38,8 +42,8 @@ const cloudPortable = await json(resolve(cloudRoot, "plugin.json"));
 const cloudCodex = await json(resolve(cloudRoot, ".codex-plugin/plugin.json"));
 const cloudApp = await json(resolve(cloudRoot, ".app.json"));
 assert(cloudPortable.name === cloudCodex.name, "Identità dei manifest cloud divergente.");
-assert(cloudPortable.version === codex.version && cloudCodex.version === codex.version, "Versioni cloud e desktop divergenti.");
-assert(cloudApp.apps?.[cloudCodex.name]?.id === app.apps["agency-os"].id, "Il pacchetto cloud deve riferirsi alla stessa app.");
+assert(cloudPortable.version === cloudCodex.version, "Versioni cloud e desktop divergenti.");
+assert(/^asdk_app_[a-z0-9]+$/.test(cloudApp.apps?.[cloudCodex.name]?.id ?? ""), "Il pacchetto cloud deve riferirsi alla stessa app.");
 assert(JSON.stringify(cloudPortable.extensions?.["com.openai"]?.interface) === JSON.stringify(cloudCodex.interface), "Interfacce dei manifest cloud divergenti.");
 for (const key of ["composerIcon", "logo", "logoDark"]) {
   const icon = cloudCodex.interface?.[key];
@@ -48,8 +52,10 @@ for (const key of ["composerIcon", "logo", "logoDark"]) {
 }
 const skillNames = await readdir(resolve(pluginRoot, "skills"));
 for (const name of skillNames) {
+  const codexSkill = await readFile(resolve(codexRoot, "skills", name, "SKILL.md"), "utf8");
   const desktopSkill = await readFile(resolve(pluginRoot, "skills", name, "SKILL.md"), "utf8");
   const cloudSkill = await readFile(resolve(cloudRoot, "skills", name, "SKILL.md"), "utf8");
+  assert(codexSkill === desktopSkill, `Skill Codex divergente: ${name}.`);
   assert(desktopSkill === cloudSkill, `Skill cloud divergente: ${name}.`);
 }
 

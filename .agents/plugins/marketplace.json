@@ -8,7 +8,7 @@
       "name": "agency-os",
       "source": {
         "source": "local",
-        "path": "./plugins/agency-os"
+        "path": "./codex/plugins/agency-os"
       },
       "policy": {
         "installation": "AVAILABLE",

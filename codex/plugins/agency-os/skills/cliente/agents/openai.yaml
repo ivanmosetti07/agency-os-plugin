@@ -1,0 +1,13 @@
+interface:
+  display_name: "Cliente"
+  short_description: "Onboarding e aggiornamento clienti senza campi vuoti"
+  default_prompt: "Usa $cliente per creare o modificare questa scheda cliente in Agency OS."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione clienti, lead e relazioni"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true
