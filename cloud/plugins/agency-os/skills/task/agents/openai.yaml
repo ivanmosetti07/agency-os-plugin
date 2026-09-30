@@ -1,0 +1,13 @@
+interface:
+  display_name: "Task"
+  short_description: "Crea e aggiorna task con campi già risolti"
+  default_prompt: "Usa $task per creare o modificare questa task in Agency OS."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione task, relazioni e notifiche"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

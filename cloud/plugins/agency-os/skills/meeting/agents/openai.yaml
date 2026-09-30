@@ -1,0 +1,13 @@
+interface:
+  display_name: "Meeting"
+  short_description: "Meeting, partecipanti, note e follow-up completi"
+  default_prompt: "Usa $meeting per creare o aggiornare questo meeting e i suoi follow-up."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione meeting e calendario Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Business"
+  short_description: "Gestisce business interni, obiettivi e stato"
+  default_prompt: "Usa $business per creare o aggiornare questo business in Agency OS."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Gestione business e progetti Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

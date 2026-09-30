@@ -1,0 +1,6 @@
+interface:
+  display_name: "Aggiorna second brain PARA"
+  short_description: "Legge la struttura corrente e corregge il drift"
+  default_prompt: "Usa $aggiorna-second-brain-para per analizzare e sistemare la struttura attuale del vault."
+policy:
+  allow_implicit_invocation: true
