@@ -160,3 +160,7 @@ codex plugin add agency-os@agency-os-plugin
 ```
 
 Dopo aver verificato il plugin, disabilitare l'eventuale server Agency OS configurato manualmente e la precedente copia cloud in Codex. Le connessioni in ChatGPT e Claude restano indipendenti.
+
+### Pannello task incorporato
+
+La risorsa MCP task v4 apre la vista `/embed` della PWA Agency OS con selettore agenzia, vista aggregata, tabella, board, calendario settimanale e dettaglio task condivisi con l’app. Il primo accesso richiede «Collega Agency OS»; la sessione rimane in memoria nel dominio Agency OS. Le risorse precedenti e il pacchetto Claude restano invariati.
