@@ -130,3 +130,9 @@ Allineato al catalogo `2026-09-30.3`, server `0.14.3`. Il pannello task offre ta
 Nel plugin personale ChatGPT, **Aggiorna strumenti** rigenera il pacchetto MCP e può riportarne la versione a `1.0.0`. Questo numero è distinto dal servizio Agency OS: per ricaricare il workbench è sufficiente chiudere e riaprire il pannello. Importare lo ZIP corrente ripristina versione e metadati del pacchetto personalizzato. Il comportamento del numero di versione generato da ChatGPT non è controllato dall’endpoint MCP.
 
 Il workbench carica le pagine task tramite `execute_read_tool`: lo schema e i permessi vengono rivalidati dal servizio anche se ChatGPT mantiene il vecchio descrittore con limite 30.
+
+## Aggiornamento 1.6.5 — Gestione tramite Plugin Creator
+
+Il pacchetto cloud è stato accettato da Plugin Creator come plugin personale privato, distinto dal plugin generato direttamente dalla connessione MCP. Il plugin generato dall’app non è modificabile con Plugin Creator; il pacchetto personalizzato può invece ricevere nuove versioni con `update_plugin`, usando ID e release correnti restituiti dal connettore. L’aggiornamento conserva connessione, file omessi e pubblico esistente.
+
+Logo ufficiale e 12 skill restano inclusi. I suggerimenti iniziali aprono le task, preparano il daily brief o creano una task; la skill task preferisce il workbench con tabella, board e calendario e gestisce gli schemi in cache e i caricamenti parziali. GitHub resta la fonte dei file: nel profilo personale gli aggiornamenti si applicano con Plugin Creator, non con una sincronizzazione automatica GitHub.

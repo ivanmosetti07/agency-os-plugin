@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -32,6 +32,26 @@ assert(codex.apps === "./.app.json", "Il manifest Codex deve collegare .app.json
 assert(/^asdk_app_[a-z0-9]+$/.test(app.apps?.["agency-os"]?.id ?? ""), "ID app ChatGPT assente o non valido.");
 assert(codexMarketplace.plugins?.[0]?.source?.path === "./plugins/agency-os", "Marketplace Codex non allineato.");
 assert(claudeMarketplace.plugins?.[0]?.source === "./plugins/agency-os", "Marketplace Claude non allineato.");
+
+const cloudRoot = resolve(root, "cloud/plugins/agency-os");
+const cloudPortable = await json(resolve(cloudRoot, "plugin.json"));
+const cloudCodex = await json(resolve(cloudRoot, ".codex-plugin/plugin.json"));
+const cloudApp = await json(resolve(cloudRoot, ".app.json"));
+assert(cloudPortable.name === cloudCodex.name, "Identità dei manifest cloud divergente.");
+assert(cloudPortable.version === codex.version && cloudCodex.version === codex.version, "Versioni cloud e desktop divergenti.");
+assert(cloudApp.apps?.[cloudCodex.name]?.id === app.apps["agency-os"].id, "Il pacchetto cloud deve riferirsi alla stessa app.");
+assert(JSON.stringify(cloudPortable.extensions?.["com.openai"]?.interface) === JSON.stringify(cloudCodex.interface), "Interfacce dei manifest cloud divergenti.");
+for (const key of ["composerIcon", "logo", "logoDark"]) {
+  const icon = cloudCodex.interface?.[key];
+  assert(typeof icon === "string" && icon.startsWith("./assets/"), `Percorso logo cloud non valido: ${key}.`);
+  assert((await stat(resolve(cloudRoot, icon))).size > 0, `Logo cloud mancante: ${key}.`);
+}
+const skillNames = await readdir(resolve(pluginRoot, "skills"));
+for (const name of skillNames) {
+  const desktopSkill = await readFile(resolve(pluginRoot, "skills", name, "SKILL.md"), "utf8");
+  const cloudSkill = await readFile(resolve(cloudRoot, "skills", name, "SKILL.md"), "utf8");
+  assert(desktopSkill === cloudSkill, `Skill cloud divergente: ${name}.`);
+}
 
 const sourceIndex = process.argv.indexOf("--source");
 if (sourceIndex !== -1) {
