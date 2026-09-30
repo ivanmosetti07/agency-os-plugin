@@ -122,3 +122,9 @@ Verifica del plugin personale: il caricamento ZIP applica la versione e i testi;
 ## Aggiornamento 1.6.3 — Icona dell’apertura globale
 
 Allineato al catalogo `2026-09-30.2`, server `0.14.2`. Il tool che apre Agency OS dichiara il logo ufficiale nel campo MCP `icons`, come previsto dalla specifica delle aperture globali. Aggiorna gli strumenti della connessione ChatGPT dopo il deploy per ricaricare l’icona.
+
+## Aggiornamento 1.6.4 — Workbench task in ChatGPT
+
+Allineato al catalogo `2026-09-30.3`, server `0.14.3`. Il pannello task offre tabella ordinabile, board per stato, calendario di pianificazione/scadenze, filtri condivisi e dettaglio con report obbligatorio per completare. Le task sono caricate automaticamente in pagine da 200 entro i permessi correnti. Gli indirizzi v1/v2 continuano a servire la nuova UI.
+
+Nel plugin personale ChatGPT, **Aggiorna strumenti** rigenera il pacchetto MCP e può riportarne la versione a `1.0.0`. Questo numero è distinto dal servizio Agency OS: per ricaricare il workbench è sufficiente chiudere e riaprire il pannello. Importare lo ZIP corrente ripristina versione e metadati del pacchetto personalizzato. Il comportamento del numero di versione generato da ChatGPT non è controllato dall’endpoint MCP.
