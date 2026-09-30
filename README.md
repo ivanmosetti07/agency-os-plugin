@@ -1,6 +1,6 @@
 # Agency OS Plugin
 
-Marketplace privato multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e include skill per il lavoro operativo, il daily brief, la riconciliazione col vault e la gestione del second brain PARA.
+Marketplace multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e include skill per il lavoro operativo, il daily brief, la riconciliazione col vault e la gestione del second brain PARA.
 
 La versione `1.3.1` è allineata al catalogo `2026-09-03.1` e al server contract `0.9.0`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
 
@@ -17,7 +17,7 @@ La versione `1.3.1` è allineata al catalogo `2026-09-03.1` e al server contract
 
 ## Installazione Codex
 
-Autenticati a GitHub con un account autorizzato alla repository privata, quindi aggiungi il marketplace:
+Aggiungi il marketplace dal repository pubblico:
 
 ```bash
 codex plugin marketplace add ivanmosetti07/agency-os-plugin --ref main
@@ -94,3 +94,11 @@ Allineato al catalogo MCP 2026-09-23.1 (server 0.14.0, 350 tool).
 ## Aggiornamento 1.5.1
 
 Riconciliazione secondo la fonte principale scelta dall’utente; viste PARA leggere e datate. Daily brief e chiusura sessione rispettano le autorizzazioni già concesse per operazioni certe, verificano le scritture e pongono domande esplicite sui dubbi. Il default resta lettura e proposta quando manca una delega esplicita.
+
+## Aggiornamento 1.6.1 — Agency OS nella barra laterale di ChatGPT
+
+Allineato al catalogo MCP `2026-09-30.1` (server `0.14.1`, 350 tool). Il tool `render_task_workbench` dichiara l’apertura globale `Agency OS`: apre le task a schermo intero, con navigazione verso clienti, progetti, meeting, preventivi e piani editoriali quando autorizzati dal token e dal ruolo. Le risorse UI sono versionate v2. Il repository è pubblico; dati e operazioni restano protetti dal login e dai permessi Agency OS.
+
+Per il plugin cloud personale già collegato, apri la sua scheda in ChatGPT, aggiorna la scansione dei tool e verifica la nuova voce Agency OS nella barra laterale. Non serve creare un secondo collegamento né pubblicare il plugin nella directory pubblica. Se ChatGPT richiede una nuova autorizzazione OAuth, completala con il tuo account Agency OS.
+
+Specifica: [Sidebar apps](https://developers.openai.com/plugins/build/extensions#sidebar-apps).
