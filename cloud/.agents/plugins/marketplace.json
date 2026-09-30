@@ -1,0 +1,20 @@
+{
+  "name": "agency-os-cloud",
+  "interface": {
+    "displayName": "Agency OS per ChatGPT"
+  },
+  "plugins": [
+    {
+      "name": "dev-6a1fdf46973081919854c960a2d7adbb",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agency-os"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

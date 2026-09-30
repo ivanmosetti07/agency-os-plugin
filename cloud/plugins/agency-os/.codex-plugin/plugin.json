@@ -1,5 +1,5 @@
 {
-  "name": "agency-os",
+  "name": "dev-6a1fdf46973081919854c960a2d7adbb",
   "version": "1.6.2",
   "description": "Skill per Agency OS, daily brief, riconciliazione e second brain PARA tramite MCP.",
   "author": {
@@ -19,12 +19,10 @@
     "para",
     "mcp"
   ],
-  "skills": "./skills/",
-  "mcpServers": "./.mcp.json",
   "apps": "./.app.json",
   "interface": {
     "displayName": "Agency OS",
-    "shortDescription": "Agency OS e second brain PARA sempre allineati",
+    "shortDescription": "Il tuo gestionale in ChatGPT",
     "longDescription": "Collega ChatGPT e Codex all'MCP di Agency OS e offre skill dedicate per daily brief, aggiornamento lavoro, task, progetti, clienti, business, meeting, preventivi, PED social e gestione del second brain PARA.",
     "developerName": "Agency OS",
     "category": "Productivity",

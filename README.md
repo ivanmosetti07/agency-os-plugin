@@ -2,7 +2,7 @@
 
 Marketplace multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claude Code. Il pacchetto collega l'endpoint remoto autenticato e include skill per il lavoro operativo, il daily brief, la riconciliazione col vault e la gestione del second brain PARA.
 
-La versione `1.3.1` è allineata al catalogo `2026-09-03.1` e al server contract `0.9.0`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
+La versione `1.6.2` è allineata al catalogo `2026-09-30.1` e al server contract `0.14.1`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
 
 ## Struttura
 
@@ -102,3 +102,17 @@ Allineato al catalogo MCP `2026-09-30.1` (server `0.14.1`, 350 tool). Il tool `r
 Per il plugin cloud personale già collegato, apri la sua scheda in ChatGPT, aggiorna la scansione dei tool e verifica la nuova voce Agency OS nella barra laterale. Non serve creare un secondo collegamento né pubblicare il plugin nella directory pubblica. Se ChatGPT richiede una nuova autorizzazione OAuth, completala con il tuo account Agency OS.
 
 Specifica: [Sidebar apps](https://developers.openai.com/plugins/build/extensions#sidebar-apps).
+
+## Aggiornamento 1.6.2 — Logo ufficiale e aggiornamenti GitHub
+
+Il plugin usa il logo originale Agency OS, bianco e giallo su fondo nero, incluso nel pacchetto in `assets/logo.png`. Il marketplace segue il repository pubblico e il ramo `main`. Nei client locali aggiorna con `codex plugin marketplace upgrade agency-os-plugin` e apri una nuova sessione.
+
+Nei workspace ChatGPT con pannello Admin, importa `https://github.com/ivanmosetti07/agency-os-plugin` da Admin → Plugins → Add → Import marketplace: percorso vuoto, ramo `main`. I nuovi marketplace prevedono sincronizzazione giornaliera e il comando Sync now. Per un plugin cloud personale il caricamento di una nuova versione resta distinto dalla sincronizzazione del marketplace locale; dopo modifiche ai tool, aggiorna anche la connessione MCP.
+
+La sincronizzazione workspace richiede i permessi Admin e non equivale alla pubblicazione nella directory pubblica. Il pacchetto attuale include `.mcp.json`: i plugin importati con questa configurazione sono limitati al client desktop. Per il plugin web personale conserva la connessione all'app già registrata tramite `.app.json`.
+
+Documentazione: [Gestione e sincronizzazione GitHub](https://developers.openai.com/codex/enterprise/plugin-management).
+
+### Pacchetto cloud personale
+
+`cloud/plugins/agency-os` conserva l’identità del plugin cloud esistente e il riferimento all’app registrata; usa il logo ufficiale e non dichiara server MCP locali, per mantenere l’uso web. Il marketplace dedicato si trova in `cloud/.agents/plugins/marketplace.json`: per importarlo da Admin usa Path `cloud`. Il caricamento manuale usa uno ZIP del contenuto di `cloud/plugins/agency-os`, con `.codex-plugin`, `.app.json` e `assets` alla radice. La connessione e i permessi dell’app restano quelli già configurati.
