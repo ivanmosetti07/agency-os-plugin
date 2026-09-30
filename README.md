@@ -118,3 +118,7 @@ Documentazione: [Gestione e sincronizzazione GitHub](https://developers.openai.c
 `cloud/plugins/agency-os` conserva l’identità del plugin cloud esistente e il riferimento all’app registrata; usa il logo ufficiale e non dichiara server MCP locali, per mantenere l’uso web. Il marketplace dedicato si trova in `cloud/.agents/plugins/marketplace.json`: per importarlo da Admin usa Path `cloud`. Il caricamento manuale usa uno ZIP del contenuto di `cloud/plugins/agency-os`, con `.codex-plugin`, `.app.json` e `assets` alla radice. La connessione e i permessi dell’app restano quelli già configurati.
 
 Verifica del plugin personale: il caricamento ZIP applica la versione e i testi; il successivo comando Aggiorna strumenti può rigenerare il pacchetto predefinito. Dopo la scansione ricarica quindi il pacchetto cloud. La visualizzazione del logo nella scheda personale resta da verificare, anche quando l’immagine è inclusa correttamente. Il pacchetto cloud include le 12 skill e il manifest portabile `plugin.json`.
+
+## Aggiornamento 1.6.3 — Icona dell’apertura globale
+
+Allineato al catalogo `2026-09-30.2`, server `0.14.2`. Il tool che apre Agency OS dichiara il logo ufficiale nel campo MCP `icons`, come previsto dalla specifica delle aperture globali. Aggiorna gli strumenti della connessione ChatGPT dopo il deploy per ricaricare l’icona.
