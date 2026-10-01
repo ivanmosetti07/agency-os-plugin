@@ -166,3 +166,5 @@ Dopo aver verificato il plugin, disabilitare l'eventuale server Agency OS config
 La risorsa MCP task v4 apre la vista `/embed` della PWA Agency OS con selettore agenzia, vista aggregata, tabella, board, calendario settimanale e dettaglio task condivisi con l’app. Il primo accesso richiede «Collega Agency OS»; la sessione rimane in memoria nel dominio Agency OS. Le risorse precedenti e il pacchetto Claude restano invariati.
 
 La policy iframe ammette anche l’origine predefinita OpenAI `web-sandbox.oaiusercontent.com`, oltre ai sottodomini isolati.
+
+Il workspace incorporato autorizza il contenitore desktop `codex-sandbox://*.web-sandbox.oaiusercontent.com` oltre ai contenitori HTTPS di ChatGPT (contratto embed 2026-10-01.1).
