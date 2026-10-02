@@ -143,7 +143,7 @@ La precedente app registrata rispondeva `Plugin not found`. Il pacchetto conserv
 
 Il pannello 1.6.6 supporta il bridge compatibile ChatGPT per il caricamento dei metadati completi e l’aggiornamento delle task. Il contratto registra anche la revisione del bridge UI.
 
-## Codex: installazione unica 1.7.1
+## Codex: installazione unica 1.7.2
 
 Il pacchetto dedicato `codex/plugins/agency-os` contiene MCP HTTP con OAuth, le 12 skill e il logo. Non richiede una app ChatGPT né una seconda configurazione manuale del server. Il pacchetto Claude resta separato e invariato.
 
@@ -173,3 +173,6 @@ Il workspace incorporato autorizza il contenitore desktop `codex-sandbox://*.web
 
 Allineato al catalogo `2026-10-02.1`, server `0.14.4`. `set_editorial_plan_review_status` accetta anche `draft` e, per l'approvazione senza `reviewer_name`, registra il nome dell'utente collegato. La descrizione di `attach_editorial_plan_asset` riporta il flusso completo di caricamento dei media nei PED (`create_asset_upload` con `scope_type=editorial_plan`, PUT, `finalize_asset_upload`, collegamento alla scheda), ripristinato lato server dalla migrazione `20261003100000`. La skill `ped-social` distingue le schede del PED dai contenuti social e descrive caricamento media e cambio di stato.
 
+## Aggiornamento 1.6.8 — progetti affidati senza switch_agency
+
+Allineato al catalogo `2026-10-03.1`, server `0.14.5`. Chi lavora per un'agenzia partner resta nella propria agenzia anche via MCP: `list_projects`, `list_tasks`, `list_clients` e `list_editorial_plans` includono i dati affidati da altre agenzie (campo `shared_from`), e ogni tool che riceve l'identificativo di una task, un progetto, un cliente o un PED affidato lavora da solo nell'agenzia proprietaria. `list_my_agencies` e `whoami` elencano queste agenzie in `partner_workspaces`; `switch_agency` verso di esse non serve e non cambia contesto. Quanto creato sui progetti affidati resta a nome e con il branding dell'agenzia che li ha affidati. La skill operativa lo spiega nella sezione sulla copertura.

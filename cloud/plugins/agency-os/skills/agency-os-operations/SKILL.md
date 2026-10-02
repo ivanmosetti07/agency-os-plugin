@@ -31,6 +31,8 @@ Per ogni lista o confronto registra almeno: agenzia, tipo di entità, limite ric
 
 Quando lavori su più agenzie, passa l'identificativo dell'agenzia a ogni tool che lo supporta. Non interpretare `resource_not_found` come un problema di permessi prima di aver verificato il contesto agenzia.
 
+Progetti affidati da un'altra agenzia (`partner_workspaces` in `list_my_agencies` e `whoami`): non chiamare `switch_agency`. Progetti, task, clienti e PED affidati compaiono già nelle liste dell'agenzia attiva con `shared_from`, e i tool che ricevono il loro identificativo lavorano da soli nell'agenzia proprietaria. Ciò che crei su quei progetti (task, commenti, PED) resta a nome e con il branding dell'agenzia che li ha affidati: dillo all'utente quando conta.
+
 Per Economics e Qonto, considera sempre indivisibile la coppia agenzia–conto collegato: risolvi prima l'agenzia attiva, non riusa risultati o identificativi ottenuti sotto un'altra agenzia e non sommare conti diversi. Se il conto selezionato è assente, chiuso o non verificabile, fermati con un errore esplicito; non scegliere un conto alternativo. Fatture e movimenti Qonto non attribuiti in modo deterministico restano esclusi da totali e analisi.
 
 ## 4. Distingui dichiarazioni e prove
