@@ -143,7 +143,7 @@ La precedente app registrata rispondeva `Plugin not found`. Il pacchetto conserv
 
 Il pannello 1.6.6 supporta il bridge compatibile ChatGPT per il caricamento dei metadati completi e l’aggiornamento delle task. Il contratto registra anche la revisione del bridge UI.
 
-## Codex: installazione unica 1.7.0
+## Codex: installazione unica 1.7.1
 
 Il pacchetto dedicato `codex/plugins/agency-os` contiene MCP HTTP con OAuth, le 12 skill e il logo. Non richiede una app ChatGPT né una seconda configurazione manuale del server. Il pacchetto Claude resta separato e invariato.
 
@@ -168,3 +168,8 @@ La risorsa MCP task v4 apre la vista `/embed` della PWA Agency OS con selettore 
 La policy iframe ammette anche l’origine predefinita OpenAI `web-sandbox.oaiusercontent.com`, oltre ai sottodomini isolati.
 
 Il workspace incorporato autorizza il contenitore desktop `codex-sandbox://*.web-sandbox.oaiusercontent.com` oltre ai contenitori HTTPS di ChatGPT (contratto embed 2026-10-01.1).
+
+## Aggiornamento 1.6.7 — PED: stato e media via MCP
+
+Allineato al catalogo `2026-10-02.1`, server `0.14.4`. `set_editorial_plan_review_status` accetta anche `draft` e, per l'approvazione senza `reviewer_name`, registra il nome dell'utente collegato. La descrizione di `attach_editorial_plan_asset` riporta il flusso completo di caricamento dei media nei PED (`create_asset_upload` con `scope_type=editorial_plan`, PUT, `finalize_asset_upload`, collegamento alla scheda), ripristinato lato server dalla migrazione `20261003100000`. La skill `ped-social` distingue le schede del PED dai contenuti social e descrive caricamento media e cambio di stato.
+
