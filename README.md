@@ -184,3 +184,9 @@ Allineato al catalogo `2026-10-03.2`, server `0.15.0` (352 tool). Lo stato di cl
 ## Aggiornamento 1.7.0 — responsabili e assegnatari separati
 
 Allineato al catalogo `2026-10-03.3`, server `0.16.0` (352 tool). Una task ha due ruoli indipendenti, ciascuno con più persone: assegnatari (`assignee_ids`, eseguono) e responsabili (`responsible_ids`, seguono e rispondono senza dover eseguire). `assign_task` accetta `role` (`assignee`, `responsible`, `both`) e `user_ids`; `unassign_task` accetta `role` (`all`, `assignee`, `responsible`); `set_task_responsible` non rende più esecutori; `update_task` sostituisce solo il ruolo passato. `list_tasks` e `get_task` restituiscono `assignee_ids`, `responsible_ids` e `people` con nome e ruolo, e filtrano con `assignee_id`, `responsible_id`, `only_mine` + `my_role`. `list_projects` filtra per `responsible_id` e `member_id`, `list_clients` per `responsible_id` e `assignee_id`. `owner_id` è il primo responsabile e in scrittura vale come `responsible_ids`. La skill task lo spiega.
+
+## Pannello completo e sessione persistente — 1.8.0
+
+`render_task_workbench` apre tutta Agency OS nel pannello di Codex. La risorsa v5 (e gli alias precedenti) usa le pagine reali dell’app, con sidebar, cambio agenzia, dettagli e permessi invariati. Il collegamento iniziale crea una sessione dedicata; cookie Secure, SameSite=None e Partitioned la conservano nel dominio Agency OS. La riapertura ripristina l’ultima pagina senza ripetere il collegamento. Il logout del browser non revoca la sessione dedicata. Il contenitore deve supportare i cookie partizionati.
+
+Il rinnovo OAuth è valido anche dopo la scadenza dell’access token, finché il refresh di 30 giorni è valido. Errori temporanei di rete o limite di richieste non revocano la connessione. Revoca esplicita, refresh scaduto e riuso restano bloccanti. Catalogo `2026-10-03.4`, server `0.16.1`.

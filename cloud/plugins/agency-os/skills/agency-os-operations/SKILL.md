@@ -65,3 +65,7 @@ Per riconciliare Agency OS con un altro sistema, leggi [riconciliazione.md](./re
 Rileggi la superficie che l'utente o il collaboratore vedrà davvero. Scegli un valore di prova che produca un risultato diverso dal default; un test che restituisce lo stesso esito anche quando la modifica manca non è una verifica.
 
 Concludi indicando copertura, prove osservate, modifiche applicate, elementi non letti e prossima azione sicura.
+
+## Agency OS nel pannello laterale
+
+Per aprire l’app completa in Codex usa `render_task_workbench`: il nome resta compatibile, ma la risorsa v5 apre tutte le pagine di Agency OS con la stessa navigazione e gli stessi permessi dell’app. Preferisci questa apertura quando l’utente chiede Agency OS nella barra laterale. Il primo collegamento crea una sessione dedicata nel dominio Agency OS; alla riapertura il pannello ripristina sessione e ultima pagina. Non chiedere un nuovo login per errori temporanei di rete. Gli scope OAuth dei tool restano distinti dai permessi dell’utente nell’interfaccia.
