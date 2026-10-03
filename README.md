@@ -46,7 +46,7 @@ Il profilo compatto espone pochi tool nativi e tre esecutori. Per scoprire un to
 
 ## Scritture verificabili
 
-Per il riquadro «Aggiornamento» di clienti e progetti usa `publish_entity_update` (semaforo `health` e sintesi `summary` obbligatori, `blockers` e `next_steps` opzionali): è la stessa scrittura del pannello della web app e risponde `recognized_by_ui: true` con `valid_until`. `update_entity_state` con il solo `content` salva una versione che la scheda non mostra e lo dichiara in `warnings[state_not_recognized_by_ui]`. Gli `update_*` di task, cliente, progetto, meeting e preventivo restituiscono `changed_fields` con le sole colonne cambiate davvero (`meta.changed_fields_source: verified`); per azzerare un campo passa `null` esplicito. Gli stati task `blocked`, `next` e `backlog` sono alias convertiti e segnalati in `warnings[status_alias]`.
+Lo stato di clienti e progetti (Top, In linea, A rischio) lo calcola Agency OS: `get_health` lo legge con motivi e segnali, `set_health` (solo admin) lo imposta a mano o lo riporta su `auto`. Per il riquadro «Aggiornamento» usa `publish_entity_update` (semaforo `health` di state.md e sintesi `summary` obbligatori, `blockers` e `next_steps` opzionali): è la stessa scrittura del pannello della web app, risponde `recognized_by_ui: true` e non cambia lo stato. `update_entity_state` con il solo `content` salva una versione che il pannello non mostra e lo dichiara in `warnings[state_not_recognized_by_ui]`. Gli `update_*` di task, cliente, progetto, meeting e preventivo restituiscono `changed_fields` con le sole colonne cambiate davvero (`meta.changed_fields_source: verified`); per azzerare un campo passa `null` esplicito. Gli stati task `blocked`, `next` e `backlog` sono alias convertiti e segnalati in `warnings[status_alias]`.
 
 ## Risposte e paginazione
 
@@ -143,7 +143,7 @@ La precedente app registrata rispondeva `Plugin not found`. Il pacchetto conserv
 
 Il pannello 1.6.6 supporta il bridge compatibile ChatGPT per il caricamento dei metadati completi e l’aggiornamento delle task. Il contratto registra anche la revisione del bridge UI.
 
-## Codex: installazione unica 1.7.2
+## Codex: installazione unica 1.7.3
 
 Il pacchetto dedicato `codex/plugins/agency-os` contiene MCP HTTP con OAuth, le 12 skill e il logo. Non richiede una app ChatGPT né una seconda configurazione manuale del server. Il pacchetto Claude resta separato e invariato.
 
@@ -176,3 +176,7 @@ Allineato al catalogo `2026-10-02.1`, server `0.14.4`. `set_editorial_plan_revie
 ## Aggiornamento 1.6.8 — progetti affidati senza switch_agency
 
 Allineato al catalogo `2026-10-03.1`, server `0.14.5`. Chi lavora per un'agenzia partner resta nella propria agenzia anche via MCP: `list_projects`, `list_tasks`, `list_clients` e `list_editorial_plans` includono i dati affidati da altre agenzie (campo `shared_from`), e ogni tool che riceve l'identificativo di una task, un progetto, un cliente o un PED affidato lavora da solo nell'agenzia proprietaria. `list_my_agencies` e `whoami` elencano queste agenzie in `partner_workspaces`; `switch_agency` verso di esse non serve e non cambia contesto. Quanto creato sui progetti affidati resta a nome e con il branding dell'agenzia che li ha affidati. La skill operativa lo spiega nella sezione sulla copertura.
+
+## Aggiornamento 1.6.9 — stato Top, In linea, A rischio
+
+Allineato al catalogo `2026-10-03.2`, server `0.15.0` (352 tool). Lo stato di clienti e progetti ha tre valori (Top, In linea, A rischio) e lo calcola Agency OS da ritardi, scadenze, fasi bloccate, fatture scadute oltre 30 giorni, meeting e segnali positivi. Nuovi tool: `get_health`, che legge un'entità o l'elenco dal più a rischio con motivi, segnali ed eventuale stato manuale, e `set_health`, che imposta lo stato a mano ed è riservato agli admin. `publish_entity_update` resta l'aggiornamento narrativo e non cambia più lo stato: `valid_until` e `recognized_for_days` tornano `null`. Le skill cliente, progetto e business lo spiegano.
