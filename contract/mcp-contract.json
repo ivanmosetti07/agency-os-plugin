@@ -4,7 +4,7 @@
   "oauth_resource": "https://agency-os.it/mcp",
   "catalog_version": "2026-10-07.2",
   "server_version": "0.17.1",
-  "fingerprint": "2c4a391af4fab4dc07dc914c72e9fd915cd857b3ddaaddcaf6e633dd38493a0a",
+  "fingerprint": "5f3fbe03c7fd20576acedba72519a08888bc4ad940a092b94f67a9a5636265c0",
   "tool_count": 371,
   "toolset_count": 31,
   "plugin_repository": "https://github.com/ivanmosetti07/agency-os-plugin",
