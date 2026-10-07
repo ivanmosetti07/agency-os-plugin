@@ -21,7 +21,9 @@ Il PDF si scarica con `create_client_report_pdf_export` (link firmato di 5 minut
 
 ## Struttura consigliata
 
-Copertina → «Il mese in numeri» (`kpi_group`, 3-4 numeri) → sintesi (`highlights`) → periodo e significato dei dati → una sezione per servizio (`section` con `service`), con grafico, tabella e «Prossimo passo» (`callout`) → priorità (`priorities`) → nota «Come leggere i dati» (`note`) → fonti (`sources`, automatico).
+Copertina → «Il mese in numeri» (`kpi_group`, 3-4 numeri) → sintesi (`highlights`) → priorità (`priorities`, la pagina le mostra subito dopo la sintesi) → periodo e significato dei dati → un capitolo per servizio → nota «Come leggere i dati» (`note`) → fonti (`sources`, automatico).
+
+Un capitolo è una serie di blocchi consecutivi con lo stesso `service`: `section` con `summary` (una frase) e `verdict` (`up`, `stable`, `watch`), un `kpi_group` (i primi 3 numeri restano visibili), grafici e tabelle, poi il `callout` «Prossimo passo». Il cliente vede titolo, giudizio, frase, numeri e prossimo passo; il resto si apre con «Leggi l'analisi». Ogni servizio ha il colore della sua piattaforma. Note delle card sotto gli 80 caratteri; le parole tecniche (ROAS, CTR, attribuito, organico) le spiega il glossario automatico.
 
 ## Regole redazionali
 

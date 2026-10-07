@@ -194,3 +194,7 @@ Il rinnovo OAuth è valido anche dopo la scadenza dell’access token, finché i
 ## Report cliente — 1.9.0
 
 Allineato al catalogo `2026-10-07.1`, server `0.17.0` (371 tool). Agency OS consegna al cliente il report dei risultati con un link (`/report/<token>`), come il PED: dataset con fonte e data di rilevazione, blocchi (copertina, numeri, sintesi, sezioni per servizio, grafici, tabelle, «Prossimo passo», priorità, note, fonti), visite e presa visione del cliente. Nuovi tool nel toolset `kpi`: `list_client_reports`, `get_client_report`, `create_client_report` (dal report precedente, da un modello o vuoto), `update_client_report`, `upsert_client_report_dataset`, `delete_client_report_dataset`, `set_client_report_blocks`, `add_`/`update_`/`move_`/`delete_client_report_block`, `check_client_report`, `publish_client_report` (con `confirm: true`), `regenerate_`/`disable_client_report_public_link`, `create_client_report_pdf_export`, `list_client_report_templates`, `save_client_report_template` e `import_client_report_artifact`. La skill `report-cliente` guida la sequenza e le regole redazionali.
+
+## Report cliente più leggibile — 1.9.1
+
+Catalogo `2026-10-07.2`, server `0.17.1`. Le sezioni accettano `summary` (una frase per chi scorre) e `verdict` (`up`, `stable`, `watch`). Per il cliente i blocchi dello stesso servizio diventano un capitolo nel colore della piattaforma, con il dettaglio dietro «Leggi l'analisi»; le priorità salgono dopo la sintesi. La skill `report-cliente` descrive la nuova struttura.
