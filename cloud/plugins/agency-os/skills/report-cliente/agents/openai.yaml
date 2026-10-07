@@ -1,0 +1,13 @@
+interface:
+  display_name: "Report cliente"
+  short_description: "Report dei risultati per il cliente, dal precedente all'invio"
+  default_prompt: "Usa $report-cliente per preparare il report di questo mese per il cliente."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Report cliente, dataset, blocchi, verifica e link Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

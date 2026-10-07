@@ -62,7 +62,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Skill
 
-Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
 
 Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
@@ -190,3 +190,7 @@ Allineato al catalogo `2026-10-03.3`, server `0.16.0` (352 tool). Una task ha du
 `render_task_workbench` apre tutta Agency OS nel pannello di Codex. La risorsa v5 (e gli alias precedenti) usa le pagine reali dell’app, con sidebar, cambio agenzia, dettagli e permessi invariati. Il collegamento iniziale crea una sessione dedicata; cookie Secure, SameSite=None e Partitioned la conservano nel dominio Agency OS. La riapertura ripristina l’ultima pagina senza ripetere il collegamento. Il logout del browser non revoca la sessione dedicata. Il contenitore deve supportare i cookie partizionati.
 
 Il rinnovo OAuth è valido anche dopo la scadenza dell’access token, finché il refresh di 30 giorni è valido. Errori temporanei di rete o limite di richieste non revocano la connessione. Revoca esplicita, refresh scaduto e riuso restano bloccanti. Catalogo `2026-10-05.1`, server `0.16.2`: le risposte degli strumenti dichiarano `data` in forma compatta, e l'elenco degli strumenti pesa circa il 15% in meno.
+
+## Report cliente — 1.9.0
+
+Allineato al catalogo `2026-10-07.1`, server `0.17.0` (371 tool). Agency OS consegna al cliente il report dei risultati con un link (`/report/<token>`), come il PED: dataset con fonte e data di rilevazione, blocchi (copertina, numeri, sintesi, sezioni per servizio, grafici, tabelle, «Prossimo passo», priorità, note, fonti), visite e presa visione del cliente. Nuovi tool nel toolset `kpi`: `list_client_reports`, `get_client_report`, `create_client_report` (dal report precedente, da un modello o vuoto), `update_client_report`, `upsert_client_report_dataset`, `delete_client_report_dataset`, `set_client_report_blocks`, `add_`/`update_`/`move_`/`delete_client_report_block`, `check_client_report`, `publish_client_report` (con `confirm: true`), `regenerate_`/`disable_client_report_public_link`, `create_client_report_pdf_export`, `list_client_report_templates`, `save_client_report_template` e `import_client_report_artifact`. La skill `report-cliente` guida la sequenza e le regole redazionali.
