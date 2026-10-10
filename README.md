@@ -198,3 +198,7 @@ Allineato al catalogo `2026-10-07.1`, server `0.17.0` (371 tool). Agency OS cons
 ## Report cliente più leggibile — 1.9.1
 
 Catalogo `2026-10-07.2`, server `0.17.1`. Le sezioni accettano `summary` (una frase per chi scorre) e `verdict` (`up`, `stable`, `watch`). Per il cliente i blocchi dello stesso servizio diventano un capitolo nel colore della piattaforma, con il dettaglio dietro «Leggi l'analisi»; le priorità salgono dopo la sintesi. La skill `report-cliente` descrive la nuova struttura.
+
+## Pagine di cliente e progetto — 1.10.0
+
+Catalogo `2026-10-11.1`, server `0.18.0` (376 tool). Ogni cliente e ogni progetto ha i suoi documenti: pagine libere (appunti, brief, verbali) con sotto-pagine su un livello, scritte con un editor a blocchi. Nuovi tool nel toolset della Knowledge: `list_document_pages` (per `client_id` o `project_id`), `get_document_page`, `create_document_page` (su cliente, progetto o dentro una pagina con `parent_id`), `update_document_page` (il contenuto HTML si sostituisce per intero: leggere prima la pagina) e `archive_document_page`. I permessi sono quelli del cliente o del progetto. Lo stato «Evergreen» delle task ora si legge «Senza scadenza».

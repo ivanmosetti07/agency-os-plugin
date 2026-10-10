@@ -28,7 +28,7 @@ assert(server?.type === "http", "Il server MCP deve usare Streamable HTTP.");
 assert(server.url === contract.endpoint, "Endpoint MCP non allineato al contratto.");
 assert(server.oauth_resource === contract.oauth_resource, "OAuth resource non allineata al contratto.");
 assert(codex.name === "agency-os" && claude.name === "agency-os", "I manifest devono condividere il nome agency-os.");
-assert(codex.version === "1.9.1", "Versione Codex inattesa.");
+assert(codex.version === "1.10.0", "Versione Codex inattesa.");
 assert(codex.version === claude.version, "Versioni Codex e Claude divergenti.");
 assert(!codex.apps, "Codex deve usare soltanto il server MCP incluso.");
 assert(JSON.stringify(codexMcp) === JSON.stringify(mcp), "Endpoint Codex divergente.");
