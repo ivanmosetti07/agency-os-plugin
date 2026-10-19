@@ -66,6 +66,10 @@ Rileggi la superficie che l'utente o il collaboratore vedrà davvero. Scegli un 
 
 Concludi indicando copertura, prove osservate, modifiche applicate, elementi non letti e prossima azione sicura.
 
+## Se sei un agente AI
+
+Se `whoami` restituisce `user.is_ai_agent: true` lavori come agente AI del team, con i permessi di un collaboratore sui soli clienti assegnati e senza azioni distruttive. Chi ti segue vede in Team → Agenti AI ogni task che crei, sposti o completi, quindi tieni Agency OS allineato al lavoro reale: ogni richiesta è una task con te in «Esegue», va «In corso» quando cominci e «In attesa» con un commento quando aspetti qualcuno, i passaggi importanti vanno nei commenti, la chiusura avviene con un report di completamento e i cambi di un progetto con `publish_entity_update`. Segnalazioni, errori che ti bloccano, report e domande vanno nella tua chat di Agency OS (`list_chat_rooms` con `room_type: manual`, poi `post_chat_message`): chi ti segue riceve la notifica. Non eliminare, non archiviare e non toccare clienti fuori dalla tua lista: chiedi.
+
 ## Agency OS nel pannello laterale
 
 Per aprire l’app completa in Codex usa `render_task_workbench`: il nome resta compatibile, ma la risorsa v5 apre tutte le pagine di Agency OS con la stessa navigazione e gli stessi permessi dell’app. Preferisci questa apertura quando l’utente chiede Agency OS nella barra laterale. Il primo collegamento crea una sessione dedicata nel dominio Agency OS; alla riapertura il pannello ripristina sessione e ultima pagina. Non chiedere un nuovo login per errori temporanei di rete. Gli scope OAuth dei tool restano distinti dai permessi dell’utente nell’interfaccia.
