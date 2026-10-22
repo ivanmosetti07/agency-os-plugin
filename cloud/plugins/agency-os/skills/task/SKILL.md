@@ -26,6 +26,7 @@ Una task ha due ruoli indipendenti, ciascuno con più persone: gli **assegnatari
 1. Risolvi agenzia, cliente e progetto dal contesto e dalle relazioni; non scegliere fra omonimi.
 2. Cerca duplicati per progetto, titolo, periodo e stato.
 3. Precompila titolo, descrizione, stato, priorità, responsabili, assegnatari, date, slot di lavorazione, scadenza, tag, checklist e dipendenze usando richiesta, progetto e default dello schema.
+   La scadenza (`due_date`) è solo una data, `YYYY-MM-DD`, senza orario: la task è in ritardo dal giorno dopo. La lavorazione (`calendar_date` → `calendar_date_end`) è una data con ora di inizio e ora di fine nello stesso giorno, in ora di Roma; una fine in un altro giorno viene rifiutata («La lavorazione inizia e finisce nello stesso giorno»), e spostando solo l'inizio la fine si ferma alle 23:59 se non ci sta. Non proporre più le 18:00 come ora di scadenza.
 4. Non inventare assegnatari, date o priorità. Se manca un obbligatorio, mostra i campi già risolti e chiedi insieme soltanto quelli scoperti.
 5. Mostra l'anteprima con chi esegue e chi è responsabile, crea con idempotenza quando disponibile e rileggi ID, progetto, `assignee_ids`, `responsible_ids` e timestamp.
 

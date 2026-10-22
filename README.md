@@ -206,3 +206,7 @@ Catalogo `2026-10-11.1`, server `0.18.0` (376 tool). Ogni cliente e ogni progett
 ## Agenti AI nel Team — 1.11.0
 
 Catalogo `2026-10-19.1`, server `0.18.1` (376 tool). Un'agenzia può avere agenti AI (su ChatGPT o Claude) che lavorano come collaboratori sui clienti assegnati: si creano in Team → Agenti AI e si collegano aggiungendo il connettore e scegliendo «Collega come: Agente …» nella schermata di consenso. `whoami` dice all'agente che è un agente (`user.is_ai_agent`) e `list_team_members` segna gli agenti con `is_ai_agent`. Il token di un agente non riceve gli scope solo admin né `dangerous:write`. Ogni agente ha una chat manuale con chi lo gestisce (`metadata.ai_agent_id`) dove scrive segnalazioni, errori e report con `post_chat_message`. La skill `agency-os-operations` ha la sezione «Se sei un agente AI».
+
+## Date delle task — 1.12.0
+
+Catalogo `2026-10-22.1`, server `0.18.2` (376 tool). In `create_task` e `update_task` la scadenza `due_date` è solo una data (`YYYY-MM-DD`): Agency OS la salva come mezzanotte UTC del giorno di Roma e la task è in ritardo dal giorno dopo. La lavorazione (`calendar_date` → `calendar_date_end`) inizia e finisce nello stesso giorno: una fine in un altro giorno risponde «La lavorazione inizia e finisce nello stesso giorno». La skill `task` lo spiega; niente più 18:00 come ora di scadenza.
