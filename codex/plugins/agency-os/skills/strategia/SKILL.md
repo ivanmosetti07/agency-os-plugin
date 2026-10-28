@@ -19,6 +19,10 @@ La strategia è un documento a blocchi in quattro sezioni (Strategia generale, M
 5. **Verifica**: `check_client_strategy`. Gli errori (segnaposto `{{…}}` non compilati, id interni nel testo, budget che non torna col totale, ad set che non sommano la campagna, brief su ad set inesistenti) bloccano l'invio; gli avvisi (attività senza chi o data, conteggi dei brief) vanno letti.
 6. **Chiedi conferma** alla persona mostrando titolo, cliente, avvisi e cosa vedrà il cliente. Solo dopo il sì esplicito: `publish_client_strategy` con `confirm: true`. Restituisci il link.
 
+## Pagina già impaginata
+
+Se l'agenzia ha già il documento finito in HTML, aggiungilo come blocco `page` (`{html}`) nella sezione `general`: il cliente vede quella pagina identica, con «Commenta o approva» sopra. Gli altri blocchi restano: sono i punti che il cliente sceglie quando commenta, quindi tienili allineati ai titoli della pagina. Nell'app i testi della pagina si correggono cliccandoci sopra («Modifica i testi della pagina»).
+
 ## Dopo l'invio
 
 - `list_client_strategy_feedback` (con `status: open`) mostra i commenti con il nome dell'elemento commentato.
