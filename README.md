@@ -62,7 +62,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Skill
 
-Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
 
 Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
@@ -214,3 +214,7 @@ Catalogo `2026-10-22.1`, server `0.18.2` (376 tool). In `create_task` e `update_
 ## Stati delle task e ripetizione — 1.13.0
 
 Catalogo `2026-10-28.1`, server `0.18.3` (376 tool). Lo stato `evergreen` non esiste più: gli stati sono `todo`, `in_progress`, `waiting`, `done`, `cancelled`, e `create_task` senza stato crea una task `todo` (prima `evergreen`). `evergreen` e `backlog` restano accettati come alias di `todo`, segnalati in `warnings[status_alias]`. La ripetizione è un'impostazione della task (simbolo ↻ nell'app), non uno stato: completata una task che si ripete, Agency OS crea subito la successiva. La skill `task` lo spiega.
+
+## Strategia cliente — 1.14.0
+
+Catalogo `2026-10-28.2`, server `0.18.4` (400 tool). Agency OS manda al cliente una strategia di marketing (Black Friday, lanci, saldi) con un link (`/strategia/<token>`): quattro sezioni a blocchi (Strategia generale, Meta e creative, Sito, Email), commenti su sezioni o singoli elementi, «Approva» / «Richiedi modifiche». Nuovi tool nel toolset `kpi`: `list_client_strategies`, `get_client_strategy`, `create_client_strategy` (da modello, dalla precedente, vuota o da blocchi), `update_client_strategy`, `archive_client_strategy`, `set_client_strategy_review_status`, `set_client_strategy_blocks`, `add_`/`update_`/`move_`/`delete_client_strategy_block`, `upsert_`/`delete_client_strategy_item`, `import_meta_structure_to_strategy` e `import_meta_results_to_strategy` (dati letti con il connettore Meta Ads), `check_client_strategy`, `publish_client_strategy`, `regenerate_`/`disable_client_strategy_public_link`, `list_`/`reply_`/`resolve_client_strategy_feedback`, `list_client_strategy_templates` e `save_client_strategy_template`. Invio, link, stato e scritture che sostituiscono o tolgono blocchi chiedono `confirm: true`. La nuova skill `strategia` guida la sequenza.

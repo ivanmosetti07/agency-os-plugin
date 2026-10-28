@@ -17,6 +17,7 @@ const expected = [
   "preventivo",
   "progetto",
   "report-cliente",
+  "strategia",
   "task"
 ];
 const mcpSkills = new Set(expected.filter((name) => !name.includes("second-brain-para")));

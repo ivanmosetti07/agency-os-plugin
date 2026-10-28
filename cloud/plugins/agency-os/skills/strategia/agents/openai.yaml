@@ -1,0 +1,13 @@
+interface:
+  display_name: "Strategia cliente"
+  short_description: "Strategia per il cliente dal modello all'approvazione, con i dati Meta Ads"
+  default_prompt: "Usa $strategia per preparare la strategia Black Friday di questo cliente."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Strategie, blocchi, import Meta, verifica, link e feedback Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true
