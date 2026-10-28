@@ -210,3 +210,7 @@ Catalogo `2026-10-19.1`, server `0.18.1` (376 tool). Un'agenzia può avere agent
 ## Date delle task — 1.12.0
 
 Catalogo `2026-10-22.1`, server `0.18.2` (376 tool). In `create_task` e `update_task` la scadenza `due_date` è solo una data (`YYYY-MM-DD`): Agency OS la salva come mezzanotte UTC del giorno di Roma e la task è in ritardo dal giorno dopo. La lavorazione (`calendar_date` → `calendar_date_end`) inizia e finisce nello stesso giorno: una fine in un altro giorno risponde «La lavorazione inizia e finisce nello stesso giorno». La skill `task` lo spiega; niente più 18:00 come ora di scadenza.
+
+## Stati delle task e ripetizione — 1.13.0
+
+Catalogo `2026-10-28.1`, server `0.18.3` (376 tool). Lo stato `evergreen` non esiste più: gli stati sono `todo`, `in_progress`, `waiting`, `done`, `cancelled`, e `create_task` senza stato crea una task `todo` (prima `evergreen`). `evergreen` e `backlog` restano accettati come alias di `todo`, segnalati in `warnings[status_alias]`. La ripetizione è un'impostazione della task (simbolo ↻ nell'app), non uno stato: completata una task che si ripete, Agency OS crea subito la successiva. La skill `task` lo spiega.
