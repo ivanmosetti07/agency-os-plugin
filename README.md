@@ -234,3 +234,7 @@ Catalogo `2026-10-29.2`, server `0.18.7` (406 tool). Agency OS ha una rubrica de
 ## Contatti dei clienti nella rubrica — 1.14.4
 
 Catalogo `2026-10-29.3`, server `0.18.8` (406 tool). I referenti scritti con `create_client` e `update_client` (`contacts`, `contact_email`, `contact_phone`) entrano anche nella rubrica come persone collegate al cliente, con la stessa email che resta una persona sola; l'esito è nel campo `crm` della risposta.
+
+## Relazione con i contatti — 1.15.0
+
+Catalogo `2026-10-29.4`, server `0.19.0` (412 tool). Ogni persona della rubrica ha tono di voce, preferenze, note personali e ruolo nelle decisioni, uno storico di ciò che ci si dice e le analisi della relazione con le versioni. Nuovi tool nel toolset `clients`: `get_crm_person_relationship` (profilo, ultimo contatto, storico con i meeting, analisi), `list_crm_interactions`, `log_crm_interaction`, `update_crm_interaction`, `delete_crm_interaction` (con conferma) e `save_crm_person_insight`; `upsert_crm_person` accetta i campi della relazione. La skill `cliente` spiega come registrare un incontro e come dedurre.
