@@ -230,3 +230,7 @@ Catalogo `2026-10-29.1`, server `0.18.6` (400 tool). Le strategie create con i b
 ## Rubrica delle persone (CRM) — 1.14.3
 
 Catalogo `2026-10-29.2`, server `0.18.7` (406 tool). Agency OS ha una rubrica delle persone dell'agenzia (Risorse → Contatti), collegate a clienti e progetti con il ruolo nel rapporto e il contatto principale; non sono utenti dell'app. Nuovi tool nel toolset `clients`: `list_crm_people`, `get_crm_person`, `upsert_crm_person` (una persona per email: se esiste già e c'è un collegamento si collega quella), `link_crm_person`, `unlink_crm_person` e `archive_crm_person`. La skill `cliente` spiega come cercare prima di creare.
+
+## Contatti dei clienti nella rubrica — 1.14.4
+
+Catalogo `2026-10-29.3`, server `0.18.8` (406 tool). I referenti scritti con `create_client` e `update_client` (`contacts`, `contact_email`, `contact_phone`) entrano anche nella rubrica come persone collegate al cliente, con la stessa email che resta una persona sola; l'esito è nel campo `crm` della risposta.
