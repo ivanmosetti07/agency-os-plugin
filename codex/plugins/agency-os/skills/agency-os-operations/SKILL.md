@@ -73,3 +73,7 @@ Se `whoami` restituisce `user.is_ai_agent: true` lavori come agente AI del team,
 ## Agency OS nel pannello laterale
 
 Per aprire l’app completa in Codex usa `render_task_workbench`: il nome resta compatibile, ma la risorsa v5 apre tutte le pagine di Agency OS con la stessa navigazione e gli stessi permessi dell’app. Preferisci questa apertura quando l’utente chiede Agency OS nella barra laterale. Il primo collegamento crea una sessione dedicata nel dominio Agency OS; alla riapertura il pannello ripristina sessione e ultima pagina. Non chiedere un nuovo login per errori temporanei di rete. Gli scope OAuth dei tool restano distinti dai permessi dell’utente nell’interfaccia.
+
+## Pipeline commerciale
+
+In app la pipeline è «CRM Lead e Pipeline» (`/sales`). Le fasi di `sales_opportunities.stage` sono `new` (Nuovo), `first_meeting` (Primo meet), `quote` (Preventivo), `quote_presentation` (Presentazione preventivo), `won` (Vinto) e `lost` (Perso). Le fasi aperte avanzano da sole quando colleghi all'opportunità un meeting passato e non annullato, un preventivo o un meeting dopo il primo preventivo, e non tornano mai indietro da sole; a mano si spostano anche indietro con `update_sales_opportunity`. `won` arriva solo da `accept_quote`, `lost` chiede `lost_reason`. Contratto e Onboarding non sono ancora fasi: sono colonne «in arrivo». I nomi vecchi (`qualification`, `negotiation`) sono accettati e convertiti in `first_meeting` e `quote`.

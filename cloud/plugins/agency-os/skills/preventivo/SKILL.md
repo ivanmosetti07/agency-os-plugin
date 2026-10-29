@@ -18,3 +18,7 @@ Calcola i totali soltanto secondo lo schema corrente e segnala qualsiasi diverge
 Leggi record, voci, link e date di stato. Applica il delta minimo e ricalcola in modo verificabile. Invio, pubblicazione, accettazione manuale e rigenerazione del link sono azioni separate da confermare sul risultato esatto.
 
 `accepted` non prova l'accordo se la data coincide con la prima visualizzazione. `sent` non prova l'invio senza data di invio e link attivo. Dopo ogni azione verifica la superficie pubblica o il timestamp pertinente senza esporre il link nel report se non richiesto.
+
+## Fase dell'opportunità
+
+Un preventivo collegato a un'opportunità (`opportunity_id`) la porta da sola nella fase `quote` (Preventivo); un meeting fissato dopo il primo preventivo la porta in `quote_presentation` (Presentazione preventivo). Non serve spostarla con `update_sales_opportunity`, e la fase non torna mai indietro da sola. `won` arriva soltanto dall'accettazione del preventivo (`accept_quote`), che converte anche il lead in cliente.

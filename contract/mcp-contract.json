@@ -2,9 +2,9 @@
   "schema_version": 1,
   "endpoint": "https://agency-os.it/mcp",
   "oauth_resource": "https://agency-os.it/mcp",
-  "catalog_version": "2026-10-29.6",
-  "server_version": "0.19.2",
-  "fingerprint": "da9839be5d31433a9c97322d69af46241b0144759050480f645ebe7082148165",
+  "catalog_version": "2026-10-29.7",
+  "server_version": "0.19.3",
+  "fingerprint": "3861dd1086c8c52c3515f8737a864a52e690cba08bb97afe891f3610e9509905",
   "tool_count": 414,
   "toolset_count": 31,
   "plugin_repository": "https://github.com/ivanmosetti07/agency-os-plugin",
@@ -13,7 +13,7 @@
     "claude": ".claude-plugin/marketplace.json"
   },
   "widget_bridge_version": "2026-10-03.1",
-  "codex_plugin_version": "1.15.2",
+  "codex_plugin_version": "1.16.0",
   "oauth_discovery_version": "2026-09-30.1",
   "embedded_workspace_version": "2026-10-03.1"
 }
