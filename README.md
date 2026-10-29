@@ -222,3 +222,7 @@ Catalogo `2026-10-28.2`, server `0.18.4` (400 tool). Agency OS manda al cliente 
 ## Pagina completa nella strategia — 1.14.1
 
 Catalogo `2026-10-28.3`, server `0.18.5` (400 tool). I blocchi della strategia accettano `page` (`{title?, html}`): il documento già impaginato che il cliente vede identico sul link, con commenti e approvazione sopra. La skill `strategia` lo spiega.
+
+## Strategia con l'aspetto del documento — 1.14.2
+
+Catalogo `2026-10-29.1`, server `0.18.6` (400 tool). Le strategie create con i blocchi si vedono come il documento di strategia dell'agenzia, generato dal tema: niente HTML da scrivere. Campi facoltativi nuovi: `eyebrow` e `badge` sui blocchi con titolo, `explainer_title` nell'apertura, `media` nei brief, `periods`/`period_key` nelle campagne email. La skill `strategia` spiega l'ordine dei blocchi che compone il documento.

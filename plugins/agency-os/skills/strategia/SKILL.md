@@ -19,9 +19,18 @@ La strategia è un documento a blocchi in quattro sezioni (Strategia generale, M
 5. **Verifica**: `check_client_strategy`. Gli errori (segnaposto `{{…}}` non compilati, id interni nel testo, budget che non torna col totale, ad set che non sommano la campagna, brief su ad set inesistenti) bloccano l'invio; gli avvisi (attività senza chi o data, conteggi dei brief) vanno letti.
 6. **Chiedi conferma** alla persona mostrando titolo, cliente, avvisi e cosa vedrà il cliente. Solo dopo il sì esplicito: `publish_client_strategy` con `confirm: true`. Restituisci il link.
 
+## Come la vede il cliente
+
+Il cliente vede la strategia impaginata come il documento di strategia dell'agenzia: colonna nera con logo, cliente e sezioni numerate, apertura con numeri e punti da sbloccare, lista di lavoro con spunte, fasi a schede, roadmap per canale, budget, campagne e brief con i riquadri dei media, home ed email a schede apribili. L'aspetto viene dal tema: **non scrivere HTML**, compila bene i blocchi.
+
+- Nella sezione `general` l'ordine conta: `hero` seguito da `callouts` e `tasks` forma l'apertura; `channel_matrix` seguito da `budget` e `kpi_rules` forma «cosa facciamo, fase per fase».
+- In `meta`, `site` ed `email` il primo blocco `text` apre la sezione (titolo e introduzione); gli altri blocchi diventano le parti numerate, con i titoli nel menu della sezione.
+- I blocchi con titolo accettano `eyebrow` (occhiello) e `badge` (etichetta accanto al titolo). I brief accettano `media` (`video`, `carousel`, `static`, `none`) per il segnaposto; le campagne email accettano `periods` e `period_key` per il filtro per periodo.
+- Il cliente commenta un punto preciso con «Commenta» direttamente sul documento.
+
 ## Pagina già impaginata
 
-Se l'agenzia ha già il documento finito in HTML, aggiungilo come blocco `page` (`{html}`) nella sezione `general`: il cliente vede quella pagina identica, con «Commenta o approva» sopra. Gli altri blocchi restano: sono i punti che il cliente sceglie quando commenta, quindi tienili allineati ai titoli della pagina. Nell'app i testi della pagina si correggono cliccandoci sopra («Modifica i testi della pagina»).
+Solo se l'agenzia ha già un documento finito a mano in HTML: aggiungilo come blocco `page` (`{html}`) nella sezione `general` e il cliente vede quella pagina al posto del documento generato, con «Commenta o approva» sopra. Gli altri blocchi restano i punti che il cliente sceglie quando commenta, quindi tienili allineati ai titoli della pagina. Nell'app i testi della pagina si correggono cliccandoci sopra («Modifica i testi della pagina»).
 
 ## Dopo l'invio
 
