@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Transcript lunghi — 1.16.1
+
+Catalogo `2026-10-29.8`, server `0.19.4`. Un segmento del transcript può arrivare al limite del documento (2 milioni di caratteri) invece di 20.000: `replace_meeting_transcript` salva tutto in un solo segmento e un testo lungo rendeva il transcript illeggibile nell'app. `update_meeting` sposta anche il contatto principale quando cambiano `client_id` o `lead_id`.
+
 ## CRM Lead e Pipeline — 1.16.0
 
 Catalogo `2026-10-29.7`, server `0.19.3`. Le fasi delle opportunità sono `new`, `first_meeting`, `quote`, `quote_presentation`, `won` e `lost`; quelle aperte avanzano da sole da meeting e preventivi collegati e si spostano anche a mano. `list_sales_opportunities`, `update_sales_opportunity`, `list_leads` e `update_lead_status` accettano le fasi nuove e convertono i nomi vecchi (`qualification` → `first_meeting`, `negotiation` → `quote`). Le skill `preventivo` e `agency-os-operations` lo spiegano.
