@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Ripetizione delle task — 1.17.0
+
+Catalogo `2026-10-29.9`, server `0.20.0`, 417 tool. Tre tool nuovi per la ripetizione delle task (simbolo ↻): `get_task_recurrence`, `set_task_recurrence` (attiva, modifica, pausa e ripresa; le date mancanti si prendono dalla task) e `remove_task_recurrence`. La skill `task` spiega quando usarli.
+
 ## Transcript lunghi — 1.16.1
 
 Catalogo `2026-10-29.8`, server `0.19.4`. Un segmento del transcript può arrivare al limite del documento (2 milioni di caratteri) invece di 20.000: `replace_meeting_transcript` salva tutto in un solo segmento e un testo lungo rendeva il transcript illeggibile nell'app. `update_meeting` sposta anche il contatto principale quando cambiano `client_id` o `lead_id`.
