@@ -21,4 +21,4 @@ Leggi record, voci, link e date di stato. Applica il delta minimo e ricalcola in
 
 ## Fase dell'opportunità
 
-Un preventivo collegato a un'opportunità (`opportunity_id`) la porta da sola nella fase `quote` (Preventivo); un meeting fissato dopo il primo preventivo la porta in `quote_presentation` (Presentazione preventivo). Non serve spostarla con `update_sales_opportunity`, e la fase non torna mai indietro da sola. `won` arriva soltanto dall'accettazione del preventivo (`accept_quote`), che converte anche il lead in cliente.
+Un preventivo collegato a un'opportunità (`opportunity_id`) la porta da sola nella fase `quote` (Preventivo); un meeting fissato dopo il primo preventivo la porta in `quote_presentation` (Presentazione preventivo). Non serve spostarla con `update_sales_opportunity`, e la fase non torna mai indietro da sola. `won` arriva soltanto dall'accettazione del preventivo (`accept_quote`), che converte anche il lead in cliente. Dopo, il contratto collegato porta l'opportunità in `contract` (Contratto) e la richiesta di onboarding in `onboarding` (Onboarding), da sole.

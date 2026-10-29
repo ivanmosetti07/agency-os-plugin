@@ -19,6 +19,10 @@ Il report cliente è un documento a blocchi che il cliente apre con un link (`/r
 
 Il PDF si scarica con `create_client_report_pdf_export` (link firmato di 5 minuti, anche da bozza).
 
+**Numeri dai KPI.** Se i KPI del cliente sono salvati in Agency OS (`kpi_snapshots`), `prefill_client_report_from_kpi` crea i dataset `kpi-<fonte>` del periodo e del confronto, con ROAS, CTR e simili ricalcolati dalle somme; i dataset scritti a mano non si toccano. Ogni notte i report in bozza con periodo chiuso si riallineano da soli.
+
+**Domande del cliente.** Dal link il cliente può fare una domanda sotto una sezione o sul report: `list_client_report_questions` le elenca (con `slot_key` e `slot_label`), `reply_client_report_question` risponde sotto la stessa sezione e chiude le domande aperte (la risposta arriva al cliente: **chiedi conferma** e passa `confirm: true`), `resolve_client_report_questions` chiude senza rispondere.
+
 ## Struttura consigliata
 
 Copertina → «Il mese in numeri» (`kpi_group`, 3-4 numeri) → sintesi (`highlights`) → priorità (`priorities`, la pagina le mostra subito dopo la sintesi) → periodo e significato dei dati → un capitolo per servizio → nota «Come leggere i dati» (`note`) → fonti (`sources`, automatico).
