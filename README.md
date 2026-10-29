@@ -242,3 +242,7 @@ Catalogo `2026-10-29.4`, server `0.19.0` (412 tool). Ogni persona della rubrica 
 ## Contatti nei meeting — 1.15.1
 
 Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si collegano ai meeting di Agency OS: `set_crm_meeting_person` (collega o scollega) e `list_crm_meeting_people`. Il meeting entra nello storico del contatto e ne aggiorna l'ultimo contatto. La skill `cliente` lo ricorda quando si registra un meeting.
+
+## Orario di lavorazione obbligatorio — 1.15.2
+
+Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
