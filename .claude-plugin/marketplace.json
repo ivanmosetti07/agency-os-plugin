@@ -3,7 +3,7 @@
   "owner": {
     "name": "Agency OS"
   },
-  "description": "Plugin privati e workflow verificabili per Agency OS.",
+  "description": "Plugin e workflow verificabili per Agency OS.",
   "plugins": [
     {
       "name": "agency-os",

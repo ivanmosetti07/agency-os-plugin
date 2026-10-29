@@ -31,14 +31,16 @@ L'autorizzazione OAuth apre il browser: va completata **una volta da un terminal
 
 ```text
 claude
-/plugin marketplace update agency-os
-/plugin install agency-os@agency-os
+/plugin marketplace add ivanmosetti07/agency-os-plugin
+/plugin install agency-os@agency-os-plugin
 /mcp   →  plugin:agency-os:agency-os  →  Authenticate
 ```
 
 Il browser mostra la pagina di consenso di Agency OS e torna su `localhost`. Da lì in poi il token vale sette giorni e si rinnova da solo; un logout dalla web app non lo revoca. Il repository non contiene password, token o chiavi API.
 
-L'aggiunta del marketplace non installa automaticamente il plugin: dopo il primo comando esegui sempre anche `/plugin install`. Dopo un aggiornamento delle skill, aggiorna il marketplace e il plugin e apri una nuova sessione per ricaricarle.
+L'aggiunta del marketplace non installa automaticamente il plugin: dopo il primo comando esegui sempre anche `/plugin install`. Per i marketplace non ufficiali l'aggiornamento automatico è spento: accendilo da `/plugin` → **Marketplaces** → `agency-os-plugin` → **Enable auto-update**. A mano: `claude plugin update agency-os@agency-os-plugin`, poi `/reload-plugins` o una nuova sessione.
+
+Le stesse istruzioni, anche per claude.ai, ChatGPT e Codex, sono in Agency OS → Impostazioni → **Claude e ChatGPT**.
 
 ## Discovery
 
