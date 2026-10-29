@@ -5,7 +5,7 @@ description: Crea, consulta o modifica clienti Agency OS con anagrafica, relazio
 
 # Cliente
 
-Leggi [campi e mutazioni](../agency-os-operations/references/campi-e-mutazioni.md) e i [controlli di sicurezza](../agency-os-operations/references/controlli-di-sicurezza.md). Scopri tool e schemi correnti nei toolset `clients`, `leads`, `projects`, `team` e `knowledge`.
+Leggi [campi e mutazioni](../agency-os-operations/references/campi-e-mutazioni.md) e i [controlli di sicurezza](../agency-os-operations/references/controlli-di-sicurezza.md). Scopri tool e schemi correnti nei toolset `clients` (anche la rubrica delle persone, `*_crm_*`), `leads`, `projects`, `team` e `knowledge`.
 
 ## Creare un cliente
 
@@ -18,3 +18,7 @@ Precompila agenzia, tipo, anagrafica, settore, contatti, owner, team, note opera
 Leggi cliente, lead, progetti, task, preventivi e contratti collegati. Applica soltanto il delta e non sovrascrivere note o contatti non citati. Prima di archiviare elenca i riferimenti ancora attivi: nessuna entità si chiude automaticamente a cascata.
 
 Lo stato del cliente (Top, In linea, A rischio) lo calcola Agency OS da progetti, fatture scadute oltre 30 giorni, meeting e segnali positivi: leggilo con `get_health` (`entity_type: "client"`) e riporta il motivo. Lo stato manuale lo imposta solo un admin con `set_health`. Per il riquadro “Aggiornamento” usa `publish_entity_update` (`entity_type: "client"`), precompilando semaforo, sintesi, blocchi e prossimi passi e mostrando l'anteprima prima di pubblicare: la risposta deve dire `recognized_by_ui: true`, e non cambia lo stato. Se la pubblicazione non riesce, fornisci il testo pronto e non dichiararlo aggiornato.
+
+## Persone del cliente (rubrica)
+
+Le persone del cliente (titolare, referenti, fornitori) stanno nella rubrica dell'agenzia, Risorse → Contatti, e non sono utenti dell'app: per il team usa i tool `team`. Prima di aggiungerne una cerca con `list_crm_people` (nome, email o `client_id`). Crea con `upsert_crm_person` passando `client_id` (o `project_id`) e `relation_role`: se l'email è già in rubrica collega la persona esistente invece di crearne un doppione (`reused: true`). Per collegare una persona già presente a un altro cliente o progetto usa `link_crm_person`; `is_primary: true` la segna come contatto principale. Togli un collegamento con `unlink_crm_person` e archivia chi non serve più con `archive_crm_person`. Il vecchio campo `contacts` del cliente resta solo come storico: l'import nella rubrica lo fa un admin dall'app.
