@@ -34,3 +34,5 @@ Per l'analisi leggi la relazione e salva con `save_crm_person_insight`: sintesi,
 ## Scheda del cliente
 
 In app la scheda di cliente e business ha quattro sezioni: Panoramica (aggiornamento cliente, roadmap dei progetti, task, meeting), Lavoro (KPI e dashboard, report, tempo), Risorse (Google Drive e documenti: audit, strategie, piano editoriale, brand identity, analisi di mercato, altre pagine) e Informazioni (anagrafica, amministrazione, note e accessi, persone). Un audit è una pagina con `kind: "audit"` in `create_document_page`; `list_document_pages` con `kind` filtra gli audit o le altre pagine.
+
+I canali del cliente (Store, Meta Ads, Google Ads, Email marketing, Social) si attivano con `set_client_channel` (solo admin), anche collegandoli ai progetti che li seguono: per ognuno nasce una dashboard dal modello. `list_client_channels` dà i KPI principali di ogni canale. I numeri arrivano dai KPI registrati con `record_kpi_snapshot` sul cliente o su un progetto collegato, con una `source` del canale (per esempio `meta_ads`, `shopify`, `klaviyo`): non esistono integrazioni native.

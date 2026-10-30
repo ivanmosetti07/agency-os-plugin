@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Canali del cliente — 1.20.0
+
+Catalogo `2026-10-30.3`, server `0.22.0`, 423 tool. Due tool nuovi: `set_client_channel` (admin) attiva o disattiva Store, Meta Ads, Google Ads, Email marketing e Social per un cliente e li collega ai progetti, creando la dashboard dal modello; `list_client_channels` dà i KPI principali di ogni canale dai KPI registrati con `record_kpi_snapshot`. La skill `cliente` lo spiega.
+
 ## Audit nei documenti del cliente — 1.19.1
 
 Catalogo `2026-10-30.2`, server `0.21.2`. `create_document_page` e `list_document_pages` hanno `kind` (`page` o `audit`): gli audit compaiono in Risorse → Documenti → Audit della scheda del cliente, che ora ha quattro sezioni. La skill `cliente` lo spiega.
