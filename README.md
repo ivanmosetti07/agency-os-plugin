@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Audit nei documenti del cliente — 1.19.1
+
+Catalogo `2026-10-30.2`, server `0.21.2`. `create_document_page` e `list_document_pages` hanno `kind` (`page` o `audit`): gli audit compaiono in Risorse → Documenti → Audit della scheda del cliente, che ora ha quattro sezioni. La skill `cliente` lo spiega.
+
 ## Report di completamento obbligatorio per tutti — 1.19.0
 
 Catalogo `2026-10-30.1`, server `0.21.1`, 421 tool. Il report di completamento è obbligatorio anche per gli admin: `create_task`, `update_task` e `complete_task` dicono che lo scrive l'AI che usa il connettore, dai fatti della task, perché Agency OS via MCP non lo genera. La skill `task` lo spiega. Nell'app la bozza la prepara l'AI di Agency OS di chi completa.
