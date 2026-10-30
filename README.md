@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Report di completamento obbligatorio per tutti — 1.19.0
+
+Catalogo `2026-10-30.1`, server `0.21.1`, 421 tool. Il report di completamento è obbligatorio anche per gli admin: `create_task`, `update_task` e `complete_task` dicono che lo scrive l'AI che usa il connettore, dai fatti della task, perché Agency OS via MCP non lo genera. La skill `task` lo spiega. Nell'app la bozza la prepara l'AI di Agency OS di chi completa.
+
 ## Sales con lead e clienti — 1.18.1
 
 Catalogo e tool invariati. La skill `agency-os-operations` dice che la pipeline sta in «Sales» insieme ai clienti attivi e terminati, e che preventivi, contratti e onboarding si aprono dalla scheda del lead o del cliente (`/sales/<id>`): le pagine elenco non ci sono più.

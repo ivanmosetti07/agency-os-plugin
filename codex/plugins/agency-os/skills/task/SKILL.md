@@ -35,6 +35,6 @@ Una task delegata deve essere visibile in Agency OS: una delega presente soltant
 
 ## Modificare una task
 
-Leggi prima task, checklist, assegnatari e dipendenze. Conserva i campi non citati e invia il delta minimo. Per completarla usa il flusso dedicato se presente, precompila il report di completamento dai fatti osservati e chiedilo se obbligatorio ma non ricavabile. Stato `done` senza timestamp o prova non equivale a completamento.
+Leggi prima task, checklist, assegnatari e dipendenze. Conserva i campi non citati e invia il delta minimo. Per completarla usa il flusso dedicato se presente, scrivi tu il report di completamento dai fatti osservati (descrizione, checklist, commenti, tempo) e fallo confermare: è obbligatorio per tutti, admin compresi, e Agency OS via MCP non lo genera; se non è ricavabile chiedilo. Stato `done` senza timestamp o prova non equivale a completamento.
 
 Dopo ogni modifica rileggi la task e verifica il campo cambiato, assegnatari e responsabili effettivi e l'eventuale attività/notifica prodotta. Se viene menzionata una persona, risolvi l'utente e verifica che la notifica sia stata creata; non considerare `@nome` nel testo una prova di consegna.
