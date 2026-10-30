@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Sales con lead e clienti — 1.18.1
+
+Catalogo e tool invariati. La skill `agency-os-operations` dice che la pipeline sta in «Sales» insieme ai clienti attivi e terminati, e che preventivi, contratti e onboarding si aprono dalla scheda del lead o del cliente (`/sales/<id>`): le pagine elenco non ci sono più.
+
 ## Pipeline, report e cron dei KPI — 1.18.0
 
 Catalogo `2026-10-29.10`, server `0.21.0`, 421 tool. Le opportunità hanno due fasi nuove dopo `won`: `contract` e `onboarding`, che avanzano da sole con contratto e richiesta di onboarding; `update_sales_opportunity` e `update_lead_status` applicano le stesse regole della web app. Quattro tool nuovi per il report cliente: `list_client_report_questions`, `reply_client_report_question` (con conferma: la risposta arriva al cliente), `resolve_client_report_questions` e `prefill_client_report_from_kpi`. Skill `agency-os-operations`, `preventivo` e `report-cliente` aggiornate.
