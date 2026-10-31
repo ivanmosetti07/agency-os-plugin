@@ -64,7 +64,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Skill
 
-Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
 
 Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
@@ -248,6 +248,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 ## Orario di lavorazione obbligatorio — 1.15.2
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
+
+## Brandbook — 1.21.0
+
+Catalogo `2026-10-31.1`, server `0.23.0`, 437 tool. Agency OS manda al cliente un brandbook con un link (`/brandbook/<token>`): capitoli con voci di testo, tavole HTML con animazioni e media sul Drive dell'agenzia, commenti su capitoli e voci, «Approva» / «Richiedi modifiche». Nuovi tool nel toolset `clients`: `list_brandbooks`, `get_brandbook`, `create_brandbook` (dal modello standard, da un modello dell'agenzia o da un altro brandbook), `update_brandbook`, `set_brandbook_fields` (voci per key), `update_brandbook_item`, `add_brandbook_item`, `remove_brandbook_item`, `list_brandbook_media`, `list_brandbook_templates`, `publish_brandbook`, `disable_brandbook_link`, `list_brandbook_feedback` e `resolve_brandbook_feedback`. Invio, link chiuso e voci tolte chiedono `confirm: true`; anche `remove_task_recurrence` ora la chiede. La nuova skill `brandbook` guida la sequenza.
 
 ## Canali del cliente — 1.20.0
 

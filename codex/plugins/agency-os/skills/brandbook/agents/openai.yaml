@@ -1,0 +1,13 @@
+interface:
+  display_name: "Brandbook"
+  short_description: "Brandbook del cliente dal modello all'approvazione, con tavole HTML e media su Drive"
+  default_prompt: "Usa $brandbook per preparare il brandbook di questo cliente."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "agency-os"
+      description: "Brandbook, capitoli e voci, media, verifica, link e feedback Agency OS"
+      transport: "streamable_http"
+      url: "https://agency-os.it/mcp"
+policy:
+  allow_implicit_invocation: true

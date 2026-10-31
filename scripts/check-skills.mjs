@@ -8,6 +8,7 @@ const expected = [
   "agency-os-operations",
   "aggiorna-lavoro",
   "aggiorna-second-brain-para",
+  "brandbook",
   "business",
   "cliente",
   "crea-second-brain-para",
