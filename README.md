@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Ripetizione «il primo giorno lun–mer del mese» — 1.22.1
+
+Catalogo `2026-11-02.1`, server `0.23.1`, 437 tool. Nella regola di `set_task_recurrence` il campo `nthWeekday` accetta `weekdays` (più giorni) al posto di `weekday`: `{n: 1, weekdays: ["mon", "tue", "wed"]}` è il primo giorno del mese che cade di lunedì, martedì o mercoledì; con `n: -1` l'ultimo. Le regole con `weekday` restano valide. La skill `task` riporta l'esempio.
+
 ## Skill del second brain PARA tolte — 1.22.0
 
 Tolte `crea-second-brain-para` e `aggiorna-second-brain-para`. Restano `aggiorna-lavoro` e `daily-brief`, che continuano a leggere e allineare il second brain con Agency OS. Catalogo e server MCP invariati.
