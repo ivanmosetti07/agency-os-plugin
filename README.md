@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Periodo nel titolo anche della prima task e periodo «prossimo» — 1.22.2
+
+Catalogo `2026-11-02.2`, server `0.23.2`, 437 tool. Il periodo nel titolo di una task che si ripete (« — Settimana 1 · Novembre 2026») compare ora anche nella prima task della serie, non solo nelle copie. `get_task_recurrence` restituisce `base_title`, il titolo senza periodo da cui nascono tutti i titoli; rinominando la prima task il periodo si rimette da solo. `period_reference` accetta anche `next` (es. «Piano social» del mese dopo). La skill `task` lo spiega.
+
 ## Ripetizione «il primo giorno lun–mer del mese» — 1.22.1
 
 Catalogo `2026-11-02.1`, server `0.23.1`, 437 tool. Nella regola di `set_task_recurrence` il campo `nthWeekday` accetta `weekdays` (più giorni) al posto di `weekday`: `{n: 1, weekdays: ["mon", "tue", "wed"]}` è il primo giorno del mese che cade di lunedì, martedì o mercoledì; con `n: -1` l'ultimo. Le regole con `weekday` restano valide. La skill `task` riporta l'esempio.
