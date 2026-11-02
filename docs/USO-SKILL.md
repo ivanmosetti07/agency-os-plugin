@@ -15,8 +15,6 @@ Le skill possono attivarsi dal linguaggio naturale. In Codex si possono richiama
 | `preventivo` | Preventivi, voci economiche, link, invio e verifiche di stato |
 | `meeting` | Meeting, calendario, partecipanti, note, transcript e follow-up |
 | `ped-social` | Piani editoriali, contenuti, media, revisioni e pubblicazione |
-| `crea-second-brain-para` | Creazione e classificazione di contenuti nel vault PARA |
-| `aggiorna-second-brain-para` | Analisi e riordino della struttura PARA esistente |
 | `agency-os-operations` | Contratto generale per operazioni MCP non coperte dalle skill dedicate |
 
 ## Come crea un'entità

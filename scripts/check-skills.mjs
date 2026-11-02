@@ -7,11 +7,9 @@ const skillsRoot = resolve(root, "plugins/agency-os/skills");
 const expected = [
   "agency-os-operations",
   "aggiorna-lavoro",
-  "aggiorna-second-brain-para",
   "brandbook",
   "business",
   "cliente",
-  "crea-second-brain-para",
   "daily-brief",
   "meeting",
   "ped-social",
@@ -21,7 +19,7 @@ const expected = [
   "strategia",
   "task"
 ];
-const mcpSkills = new Set(expected.filter((name) => !name.includes("second-brain-para")));
+const mcpSkills = new Set(expected);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);

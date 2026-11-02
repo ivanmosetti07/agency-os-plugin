@@ -64,7 +64,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Skill
 
-Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook`, `crea-second-brain-para`, `aggiorna-second-brain-para` e la base `agency-os-operations`.
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook` e la base `agency-os-operations`.
 
 Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
@@ -248,6 +248,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 ## Orario di lavorazione obbligatorio — 1.15.2
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
+
+## Skill del second brain PARA tolte — 1.22.0
+
+Tolte `crea-second-brain-para` e `aggiorna-second-brain-para`. Restano `aggiorna-lavoro` e `daily-brief`, che continuano a leggere e allineare il second brain con Agency OS. Catalogo e server MCP invariati.
 
 ## Brandbook — 1.21.0
 
