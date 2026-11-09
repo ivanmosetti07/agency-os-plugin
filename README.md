@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Inbox e idee: sezioni e note — 1.23.0
+
+Catalogo `2026-11-09.1`, server `0.24.0`, 440 tool. Le voci di Inbox e le idee si dividono in sezioni personali, separate per colonna e condivisibili con l'agenzia. Nuovi tool nel toolset `inbox`: `list_inbox_sections`, `create_inbox_section` e `get_inbox_item` (descrizione, sezione e note complete). `list_inbox` filtra per `section_id`; `create_inbox_item` e `update_inbox_item` accettano `section_id`, e `update_inbox_item` anche `notes_html`, le note in stile Apple Note con checklist, titoli ed elenchi. La skill `agency-os-operations` lo spiega.
+
 ## Periodo nel titolo anche della prima task e periodo «prossimo» — 1.22.2
 
 Catalogo `2026-11-02.2`, server `0.23.2`, 437 tool. Il periodo nel titolo di una task che si ripete (« — Settimana 1 · Novembre 2026») compare ora anche nella prima task della serie, non solo nelle copie. `get_task_recurrence` restituisce `base_title`, il titolo senza periodo da cui nascono tutti i titoli; rinominando la prima task il periodo si rimette da solo. `period_reference` accetta anche `next` (es. «Piano social» del mese dopo). La skill `task` lo spiega.
