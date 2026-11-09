@@ -249,6 +249,10 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
 
+## Note in stile Apple Note — 1.23.1
+
+Catalogo `2026-11-09.2`, server `0.24.1`, 440 tool. Sotto Inbox e Idee ci sono le Note: `type: "note"` in `list_inbox`, `create_inbox_item` e `update_inbox_item`, cartelle con `create_inbox_section` e `type: "note"`. Con `notes_html` il titolo della nota diventa la sua prima riga. La skill `agency-os-operations` lo spiega.
+
 ## Inbox e idee: sezioni e note — 1.23.0
 
 Catalogo `2026-11-09.1`, server `0.24.0`, 440 tool. Le voci di Inbox e le idee si dividono in sezioni personali, separate per colonna e condivisibili con l'agenzia. Nuovi tool nel toolset `inbox`: `list_inbox_sections`, `create_inbox_section` e `get_inbox_item` (descrizione, sezione e note complete). `list_inbox` filtra per `section_id`; `create_inbox_item` e `update_inbox_item` accettano `section_id`, e `update_inbox_item` anche `notes_html`, le note in stile Apple Note con checklist, titoli ed elenchi. La skill `agency-os-operations` lo spiega.
