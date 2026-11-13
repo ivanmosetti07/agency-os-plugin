@@ -1,6 +1,6 @@
 ---
 name: agency-os-operations
-description: Workflow generale e fallback per operazioni trasversali su Agency OS tramite MCP, inclusi finanza, contratti, chat, knowledge e allegati. Usala quando la richiesta attraversa più domini o non è coperta da una skill dedicata; per task, progetti, clienti, business, preventivi, meeting e PED preferisci la skill specifica.
+description: Workflow generale e fallback per operazioni trasversali su Agency OS tramite MCP, inclusi finanza, contratti, chat, knowledge e allegati. Usala quando la richiesta attraversa più domini o non è coperta da una skill dedicata; per pianificazione da allineamenti o idee preferisci pianifica, per task, progetti, clienti, business, preventivi, meeting e PED la skill specifica.
 ---
 
 # Operazioni Agency OS
@@ -67,6 +67,8 @@ Rileggi la superficie che l'utente o il collaboratore vedrà davvero. Scegli un 
 Concludi indicando copertura, prove osservate, modifiche applicate, elementi non letti e prossima azione sicura.
 
 ## Se sei un agente AI
+
+Le richieste di sola lettura o brainstorming senza scritture non autorizzano task, commenti o messaggi di servizio. Il tracciamento seguente si applica solo nello scope del lavoro operativo autorizzato.
 
 Se `whoami` restituisce `user.is_ai_agent: true` lavori come agente AI del team, con i permessi di un collaboratore sui soli clienti assegnati e senza azioni distruttive. Chi ti segue vede in Team → Agenti AI ogni task che crei, sposti o completi, quindi tieni Agency OS allineato al lavoro reale: ogni richiesta è una task con te in «Esegue», va «In corso» quando cominci e «In attesa» con un commento quando aspetti qualcuno, i passaggi importanti vanno nei commenti, la chiusura avviene con un report di completamento e i cambi di un progetto con `publish_entity_update`. Segnalazioni, errori che ti bloccano, report e domande vanno nella tua chat di Agency OS (`list_chat_rooms` con `room_type: manual`, poi `post_chat_message`): chi ti segue riceve la notifica. Non eliminare, non archiviare e non toccare clienti fuori dalla tua lista: chiedi.
 

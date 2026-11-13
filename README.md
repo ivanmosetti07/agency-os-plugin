@@ -4,6 +4,10 @@ Marketplace multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claud
 
 La versione `1.6.2` è allineata al catalogo `2026-09-30.1` e al server contract `0.14.1`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
 
+## Pianificazione da allineamenti (in preparazione)
+
+La skill `pianifica` trasforma meeting, transcript, recap o idee in un piano con progetto, task, ruoli, dipendenze e date. Mantiene il brainstorming in sola lettura; applica il piano autorizzato riusando le entità esistenti e verificandone la rilettura. Le lavorazioni vengono pianificate solo per le persone richieste, distinguendo gli slot nativi dalle sessioni annotate. Disponibile nei tre pacchetti; versione di release e catalogo MCP restano invariati fino alla pubblicazione. Vedi [uso delle skill](docs/USO-SKILL.md).
+
 ## Struttura
 
 - `.agents/plugins/marketplace.json`: marketplace ChatGPT/Codex.

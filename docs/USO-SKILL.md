@@ -8,6 +8,7 @@ Le skill possono attivarsi dal linguaggio naturale. In Codex si possono richiama
 |---|---|
 | `daily-brief` | Brief della giornata in forma fissa: chiusure, calendario, priorità, deleghe, agenti, scadenze, salute e riconciliazione Agency OS in sola lettura |
 | `aggiorna-lavoro` | Chiusura sessione, backlog, registri e lotto di allineamento vault-Agency OS |
+| `pianifica` | Da allineamenti, transcript o idee a un piano iterativo con progetto, task, ruoli, dipendenze, scadenze e slot richiesti; applica solo il lotto autorizzato |
 | `task` | Task, checklist, assegnatari, date, attività e notifiche |
 | `progetto` | Progetti, team, workflow, KPI e aggiornamento periodico |
 | `cliente` | Clienti, onboarding, relazioni e archiviazione sicura |
@@ -40,3 +41,11 @@ Usa $progetto per aggiornare lo stato dal resoconto della settimana, senza cambi
 ```
 
 Importi, condizioni legali, destinatari, assegnatari, permessi, date e identificativi non vengono inventati. Le scritture esterne, gli invii, le pubblicazioni e le operazioni critiche restano separati e richiedono approvazione esplicita sul contenuto esatto.
+
+## Pianificare da un allineamento
+
+```text
+Usa $pianifica: parti dall'ultimo allineamento pertinente, riusa il progetto esistente e proponi qui task, ruoli e scadenze. Non aggiornare Agency OS finché rivediamo il piano.
+```
+
+Le correzioni aggiornano la bozza. Quando l'utente approva il piano concreto e chiede di applicarlo, la skill riusa le task esistenti, scrive solo il delta autorizzato e rilegge progetti e task. Se le lavorazioni richiedono più sessioni, distingue gli slot nativi da quelli solo annotati secondo le capability correnti. Non esegue le azioni future descritte nelle task e non richiede un mirror personale.
