@@ -1,6 +1,6 @@
 ---
 name: progetto
-description: Crea, consulta o modifica progetti Agency OS, risolvendo cliente o business, team, workflow, obiettivi, date e stato. Usala per schede progetto, avanzamento, membri e aggiornamenti periodici.
+description: Crea, consulta o modifica progetti Agency OS, risolvendo cliente o business, team, workflow, obiettivi, date e stato. Usala per schede progetto, avanzamento, membri e aggiornamenti periodici; per costruire il piano con task e dipendenze usa pianifica.
 ---
 
 # Progetto

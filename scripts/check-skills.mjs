@@ -13,6 +13,7 @@ const expected = [
   "daily-brief",
   "meeting",
   "ped-social",
+  "pianifica",
   "preventivo",
   "progetto",
   "report-cliente",
