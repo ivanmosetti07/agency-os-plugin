@@ -1,6 +1,6 @@
 {
   "name": "agency-os",
-  "version": "1.23.1",
+  "version": "1.24.0",
   "description": "Skill per Agency OS, daily brief, riconciliazione e second brain PARA tramite MCP.",
   "author": {
     "name": "Agency OS",
@@ -25,7 +25,7 @@
   "interface": {
     "displayName": "Agency OS",
     "shortDescription": "Tutta Agency OS nel pannello",
-    "longDescription": "Apri tutta Agency OS nel pannello laterale di Codex: panoramica, clienti, progetti, task, calendario, meeting, PED e le aree consentite al tuo account. Sessione dedicata persistente con rinnovo automatico. Include connessione MCP autenticata e 12 skill operative.",
+    "longDescription": "Apri tutta Agency OS nel pannello laterale di Codex: panoramica, clienti, progetti, task, calendario, meeting, PED e le aree consentite al tuo account. Sessione dedicata persistente con rinnovo automatico. Include connessione MCP autenticata e 14 skill operative.",
     "developerName": "Agency OS",
     "category": "Productivity",
     "capabilities": [

@@ -17,6 +17,12 @@ Leggi [agency-os-operations](../agency-os-operations/SKILL.md) per catalogo, cop
 - Risolvi agenzia, cliente/business, progetto e persone. Cerca progetti e task esistenti anche con sinonimi e completa le pagine pertinenti prima di dichiarare assenze. Leggi checklist e relazioni delle task da trasformare: riusa gli ID indicati anziché cancellare e ricreare.
 - Per eventi o date esterne verifica la fonte ufficiale corrente, distinguendo edizione e anno; uno snippet vecchio non prevale sulla pagina attuale. Usa link, mail o messaggi richiesti e accessibili in sola lettura, senza inventare URL, orari o partecipazioni. Se il canale non è accessibile, esplicita il limite.
 
+## Usa i precedenti pertinenti
+
+Prima di strutturare il piano consulta progetti, task e checklist analoghi già svolti, inclusi completati o archiviati quando utili e accessibili. Cerca per risultato, cliente/business e tipo di lavoro; leggi il dettaglio dei precedenti migliori, non soltanto titoli o checklist riassunte. Ricavane struttura, granularità delle task, ruoli, sequenza, dipendenze e prassi reali, considerando anche esiti e correzioni disponibili.
+
+Mostra brevemente quali precedenti orientano la proposta e quali adattamenti servono oggi. Sono riferimenti, non decisioni attuali: prevalgono richiesta, correzioni e vincoli correnti. Non copiare automaticamente date, persone, prezzi, condizioni o soluzioni superate; non trasformare un'assegnazione storica in una responsabilità attuale. Riutilizza la struttura utile senza duplicare le task storiche, riaprire archivi o modificare i precedenti. Se non trovi precedenti o la lettura è parziale, dichiaralo e costruisci il piano dai dati disponibili.
+
 ## Costruisci e rivedi il piano in chat
 
 Se è richiesto brainstorming, proposta o «non aggiornare Agency OS», resta in sola lettura fino a un'autorizzazione successiva. Presenta subito una proposta completa quando il contesto basta; non imporre domande per ogni fase. Chiedi solo ambiguità che cambiano il risultato, continuando le parti indipendenti.

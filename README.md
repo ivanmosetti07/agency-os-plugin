@@ -4,9 +4,9 @@ Marketplace multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claud
 
 La versione `1.6.2` è allineata al catalogo `2026-09-30.1` e al server contract `0.14.1`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
 
-## Pianificazione da allineamenti (in preparazione)
+## Aggiornamento 1.24.0 — Pianifica da allineamenti e precedenti
 
-La skill `pianifica` trasforma meeting, transcript, recap o idee in un piano con progetto, task, ruoli, dipendenze e date. Mantiene il brainstorming in sola lettura; applica il piano autorizzato riusando le entità esistenti e verificandone la rilettura. Le lavorazioni vengono pianificate solo per le persone richieste, distinguendo gli slot nativi dalle sessioni annotate. Disponibile nei tre pacchetti; versione di release e catalogo MCP restano invariati fino alla pubblicazione. Vedi [uso delle skill](docs/USO-SKILL.md).
+La skill `pianifica` trasforma meeting, transcript, recap o idee in un piano con progetto, task, ruoli, dipendenze e date. Mantiene il brainstorming in sola lettura; applica il piano autorizzato riusando le entità esistenti e verificandone la rilettura. Le lavorazioni vengono pianificate solo per le persone richieste, distinguendo gli slot nativi dalle sessioni annotate. Usa anche progetti, task e checklist storici pertinenti come riferimento per struttura e prassi, adattandoli alle decisioni correnti. Disponibile nei tre pacchetti; catalogo e server MCP restano invariati. Vedi [uso delle skill](docs/USO-SKILL.md).
 
 ## Struttura
 
@@ -68,7 +68,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Skill
 
-Sono incluse `daily-brief`, `aggiorna-lavoro`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook` e la base `agency-os-operations`.
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `pianifica`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook` e la base `agency-os-operations`.
 
 Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
