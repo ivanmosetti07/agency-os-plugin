@@ -4,6 +4,10 @@ Marketplace multipiattaforma per usare l'MCP Agency OS da ChatGPT, Codex e Claud
 
 La versione `1.6.2` è allineata al catalogo `2026-09-30.1` e al server contract `0.14.1`. Le operazioni Economics/Qonto mantengono sempre il confine agenzia–conto e trattano `qonto_id` come campo di sola lettura.
 
+## Aggiornamento 1.25.0 — Metodo operativo, privacy e chiusura completa
+
+Standard adattabile: un progetto per servizio ricorrente e progetti separati per risultati una tantum; una task per consegna, con modelli di servizio, ruoli distinti, ricorrenze native, feedback nella task esistente e dipendenze ripianificate soltanto su date autorizzate. Il Daily Brief è sempre in sola lettura; aggiorna-lavoro conclude con brief completo, review DREAM separata e domande deduplicate. Corretti governance AGENTS/.agents, riservatezza di tutti gli importi, calendario senza duplicati e controlli di condivisione e approvazione PED. Nessuna riconciliazione WhatsApp o modifica al workflow Git del vault. Nessuna modifica a endpoint, schemi o permessi MCP.
+
 ## Aggiornamento 1.24.0 — Pianifica da allineamenti e precedenti
 
 La skill `pianifica` trasforma meeting, transcript, recap o idee in un piano con progetto, task, ruoli, dipendenze e date. Mantiene il brainstorming in sola lettura; applica il piano autorizzato riusando le entità esistenti e verificandone la rilettura. Le lavorazioni vengono pianificate solo per le persone richieste, distinguendo gli slot nativi dalle sessioni annotate. Usa anche progetti, task e checklist storici pertinenti come riferimento per struttura e prassi, adattandoli alle decisioni correnti. Disponibile nei tre pacchetti; catalogo e server MCP restano invariati. Vedi [uso delle skill](docs/USO-SKILL.md).

@@ -9,6 +9,8 @@ Porta il contesto a un piano concreto, nuovo o dentro un progetto esistente. Man
 
 Leggi [agency-os-operations](../agency-os-operations/SKILL.md) per catalogo, copertura, permessi e verifiche. Per applicare il piano usa [progetto](../progetto/SKILL.md) e [task](../task/SKILL.md), senza duplicarne i contratti. Questa skill governa la costruzione del piano; quelle di entità governano le singole mutazioni.
 
+Leggi e applica il [metodo per progetti e task](../agency-os-operations/references/progetti-e-task.md), adattandolo alle decisioni correnti dell’utente.
+
 ## Ricostruisci il punto di partenza
 
 - Accetta meeting o transcript, recap incollato, conversazione precedente, idee grezze e liste di cose da fare. Cerca e leggi le fonti indicate disponibili prima di chiedere informazioni recuperabili.

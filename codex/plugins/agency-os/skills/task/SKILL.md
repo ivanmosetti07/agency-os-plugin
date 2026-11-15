@@ -7,6 +7,8 @@ description: Crea, consulta o modifica task in Agency OS con progetto, cliente, 
 
 Leggi il contratto [campi e mutazioni](../agency-os-operations/references/campi-e-mutazioni.md). Scopri sempre tool e schema correnti nei toolset `tasks`, `projects`, `clients`, `team` e, se serve, `assets` o `notifications`.
 
+Leggi e applica il [metodo per progetti e task](../agency-os-operations/references/progetti-e-task.md), adattandolo alle decisioni correnti dell’utente.
+
 ## Aprire e consultare le task
 
 Per richieste come “apri le mie task”, “mostra la board” o “vedi il calendario”, usa il workbench interattivo `render_task_workbench` dopo avere risolto l'agenzia. Mantieni i filtri richiesti dall'utente. Il pannello offre tabella ordinabile, board e calendario mensile con gli stessi filtri; non sostituirlo con una lista testuale quando la superficie interattiva è disponibile.

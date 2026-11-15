@@ -28,3 +28,13 @@ Per un file locale: `create_asset_upload` con `scope_type=editorial_plan` e `sco
 Leggi piano, contenuti, feedback, allegati e stato di revisione. Mantieni gli ID e applica delta puntuali. Pubblicazione, invio in revisione, rigenerazione di link e upload verso canali esterni sono azioni distinte che richiedono approvazione sul lotto esatto.
 
 Non cancellare mai i media. Verifica il piano nella stessa vista usata dall'utente: un conteggio dell'entità sbagliata non prova che i contenuti siano comparsi.
+
+## Approvazioni e link pubblico
+
+Distingui approvazione del piano, feedback del cliente e stato di ogni scheda. Un «ok» ambiguo non approva automaticamente tutto il mese: risolvi contenuti, versione e identità di chi approva. Una conferma esplicita dell'intero piano resta valida nel suo scope. Non attribuire al cliente un'approvazione registrata dall'utente collegato.
+
+Quando cambia copy, caption o media di un contenuto approvato, non trattare la vecchia approvazione come prova per la nuova versione. Rileggi stato e feedback dopo la modifica e verifica le capability correnti: `update_editorial_plan` riporta un piano approvato in revisione, ma questo non prova un reset per ogni modifica a scheda o media. Non dichiarare una revoca automatica non osservata; proponi il ritorno in revisione con l'operazione supportata e applicalo solo nello scope autorizzato. Se il server non espone approvazioni per scheda, dichiara il limite senza inventare campi.
+
+Prima di attivare o condividere il link rileggi sezioni, note di calendario, schede e media effettivamente esposti: escludi informazioni interne, richieste al team, dati di partner e importi. Se serve una modifica non autorizzata, prepara il delta e sospendi la sola condivisione; non pubblicare per poi ripulire.
+
+`enable_editorial_plan_public_link` abilita il link in modo idempotente, conservando lo stesso URL. `regenerate_editorial_plan_public_link` cambia l'URL e revoca quello precedente: è un'operazione distruttiva, non un refresh. Non rigenerarlo per un semplice aggiornamento del PED. Verifica schema, autorizzazione e conferme richieste, poi rileggi lo stato e l'URL; non inventare un link pubblico.

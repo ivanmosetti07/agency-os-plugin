@@ -48,7 +48,7 @@ Uno stato di successo non prova che la mutazione sia avvenuta. Cerca l'identific
 
 Clienti, progetti, task, meeting, chat, knowledge, asset ed editoriale possono essere letti da collaboratori autorizzati. Non inserire importi, condizioni economiche o segreti in testo libero su queste superfici.
 
-Usa preventivi, finanza, contratti e lead per le informazioni amministrative. La spesa pubblicitaria può restare nella delivery quando è già visibile al cliente. Redigi i dati sensibili prima della persistenza, non con una pulizia successiva.
+Usa preventivi, finanza, contratti e lead per le informazioni amministrative. Tutti gli importi, inclusi budget ADS e prezzi dei prodotti, devono stare soltanto in superfici amministrative di cui hai verificato accesso e visibilità; la visibilità preesistente al cliente non è un’eccezione. Questa regola non autorizza bonifiche dei dati esistenti: prima verifica una destinazione privata e prepara il delta senza perdere gli originali. Redigi i dati sensibili prima della persistenza, non con una pulizia successiva.
 
 `qonto_id` è un campo di provenienza in sola lettura: non inviarlo nei tool di creazione o modifica di fatture. Solo il sincronizzatore Qonto può creare o aggiornare documenti marcati con un identificativo Qonto.
 
