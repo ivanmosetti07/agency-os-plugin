@@ -17,7 +17,7 @@ Nel root di un'area rimangono soltanto file di governance. Documenti, strategie,
 
 ## Governance
 
-- `CLAUDE.md`: sole regole operative specifiche della cartella. Crearlo sotto la radice soltanto se resta almeno un vincolo non già ereditato.
+- `AGENTS.md`: regole operative specifiche della cartella; istruzioni e skill condivise vivono in `.agents/`, con le skill in `.agents/skills/`. Non creare `CLAUDE.md`, varianti di maiuscole o cartelle `.claude`; non ripristinare istruzioni ritirate.
 - `MEMORY.md`: identità e conoscenza stabile.
 - `INDEX.md`: navigazione orientata al compito.
 - `STATE.md`: snapshot corrente.
@@ -38,4 +38,4 @@ I registri vivono in `3_Risorse/log/<AAAA-MM>/<AAAA-MM-GG>.md`. Le entry inizian
 - Non eliminare mai `_Inbox/`. I materiali nuovi e ancora grezzi entrano lì e vengono triagiati entro sette giorni.
 - Prima di spostare file, individua link Markdown, wikilink e riferimenti di frontmatter. Nel corpo i percorsi sono relativi al file; nel frontmatter e nei wikilink con slash sono relativi alla radice.
 - Una migrazione finisce contando i residui e verificando i link, non contando soltanto i file spostati.
-- Ogni scrittura fuori dal vault richiede bozza, approvazione, applicazione e registrazione.
+- Ogni scrittura esterna richiede un lotto leggibile e autorizzazione sul suo scope. Per operazioni Agency OS certe già autorizzate applica [riconciliazione.md](riconciliazione.md), senza un secondo consenso identico. Dubbi, nuovi effetti esterni, invii, pubblicazioni e permessi richiedono la decisione pertinente; rispetta comunque le conferme del server.

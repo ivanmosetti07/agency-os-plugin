@@ -59,6 +59,16 @@ for (const name of expected) {
     assert(metadata.includes('url: "https://agency-os.it/mcp"'), `${name}: endpoint MCP assente.`);
   }
   await validateLinks(skillPath, skill);
+  // Anche i riferimenti condivisi devono avere link interni risolvibili.
 }
 
 console.log(`Skill verificate: ${expected.length}, metadati e riferimenti coerenti.`);
+
+async function validateReferenceTree(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const path = resolve(dir, entry.name);
+    if (entry.isDirectory()) await validateReferenceTree(path);
+    else if (entry.name.endsWith(".md")) await validateLinks(path, await readFile(path, "utf8"));
+  }
+}
+await validateReferenceTree(resolve(skillsRoot, "agency-os-operations/references"));

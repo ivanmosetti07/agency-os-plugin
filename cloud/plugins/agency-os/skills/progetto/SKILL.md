@@ -7,6 +7,8 @@ description: Crea, consulta o modifica progetti Agency OS, risolvendo cliente o 
 
 Leggi [campi e mutazioni](../agency-os-operations/references/campi-e-mutazioni.md) e i [controlli di sicurezza](../agency-os-operations/references/controlli-di-sicurezza.md). Scopri gli schemi correnti nei toolset `projects`, `clients`, `team`, `tasks` e `kpi`.
 
+Leggi e applica il [metodo per progetti e task](../agency-os-operations/references/progetti-e-task.md), adattandolo alle decisioni correnti dell’utente.
+
 ## Creare un progetto
 
 Risolvi agenzia e cliente/business, cerca duplicati e precompila nome, descrizione, outcome, workflow, stato, date, team, owner, tag e KPI dai dati verificati. Un progetto deve avere un outcome e, quando il workflow lo richiede, una scadenza. Non inserire importi o condizioni economiche nel testo condiviso; usa preventivi e superfici amministrative.

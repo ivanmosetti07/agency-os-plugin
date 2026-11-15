@@ -28,7 +28,9 @@ assert(server?.type === "http", "Il server MCP deve usare Streamable HTTP.");
 assert(server.url === contract.endpoint, "Endpoint MCP non allineato al contratto.");
 assert(server.oauth_resource === contract.oauth_resource, "OAuth resource non allineata al contratto.");
 assert(codex.name === "agency-os" && claude.name === "agency-os", "I manifest devono condividere il nome agency-os.");
-assert(codex.version === "1.24.0", "Versione Codex inattesa.");
+const pkg = await json(resolve(root, "package.json"));
+assert(codex.version === pkg.version, "Versione Codex divergente dal pacchetto.");
+assert(contract.codex_plugin_version === pkg.version, "Versione plugin nel contratto divergente.");
 assert(codex.version === claude.version, "Versioni Codex e Claude divergenti.");
 assert(!codex.apps, "Codex deve usare soltanto il server MCP incluso.");
 assert(JSON.stringify(codexMcp) === JSON.stringify(mcp), "Endpoint Codex divergente.");
@@ -43,7 +45,7 @@ const cloudPortable = await json(resolve(cloudRoot, "plugin.json"));
 const cloudCodex = await json(resolve(cloudRoot, ".codex-plugin/plugin.json"));
 const cloudApp = await json(resolve(cloudRoot, ".app.json"));
 assert(cloudPortable.name === cloudCodex.name, "Identità dei manifest cloud divergente.");
-assert(cloudPortable.version === cloudCodex.version, "Versioni cloud e desktop divergenti.");
+assert(cloudPortable.version === cloudCodex.version && cloudCodex.version === codex.version, "Versioni cloud e desktop divergenti.");
 assert(/^asdk_app_[a-z0-9]+$/.test(cloudApp.apps?.[cloudCodex.name]?.id ?? ""), "Il pacchetto cloud deve riferirsi alla stessa app.");
 assert(JSON.stringify(cloudPortable.extensions?.["com.openai"]?.interface) === JSON.stringify(cloudCodex.interface), "Interfacce dei manifest cloud divergenti.");
 for (const key of ["composerIcon", "logo", "logoDark"]) {
@@ -51,13 +53,25 @@ for (const key of ["composerIcon", "logo", "logoDark"]) {
   assert(typeof icon === "string" && icon.startsWith("./assets/"), `Percorso logo cloud non valido: ${key}.`);
   assert((await stat(resolve(cloudRoot, icon))).size > 0, `Logo cloud mancante: ${key}.`);
 }
-const skillNames = await readdir(resolve(pluginRoot, "skills"));
-for (const name of skillNames) {
-  const codexSkill = await readFile(resolve(codexRoot, "skills", name, "SKILL.md"), "utf8");
-  const desktopSkill = await readFile(resolve(pluginRoot, "skills", name, "SKILL.md"), "utf8");
-  const cloudSkill = await readFile(resolve(cloudRoot, "skills", name, "SKILL.md"), "utf8");
-  assert(codexSkill === desktopSkill, `Skill Codex divergente: ${name}.`);
-  assert(desktopSkill === cloudSkill, `Skill cloud divergente: ${name}.`);
+async function skillFiles(dir, prefix = "") {
+  const paths = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const name = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) paths.push(...await skillFiles(resolve(dir, entry.name), name));
+    else paths.push(name);
+  }
+  return paths.sort();
+}
+const canonicalSkills = resolve(pluginRoot, "skills");
+const canonicalFiles = await skillFiles(canonicalSkills);
+for (const target of [codexRoot, cloudRoot]) {
+  const targetSkills = resolve(target, "skills");
+  assert(JSON.stringify(await skillFiles(targetSkills)) === JSON.stringify(canonicalFiles), `File skill mancanti o extra: ${target}.`);
+  for (const path of canonicalFiles) {
+    const expected = await readFile(resolve(canonicalSkills, path));
+    const actual = await readFile(resolve(targetSkills, path));
+    assert(expected.equals(actual), `Skill o riferimento divergente: ${target}/${path}.`);
+  }
 }
 
 const sourceIndex = process.argv.indexOf("--source");

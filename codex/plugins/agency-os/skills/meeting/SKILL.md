@@ -11,7 +11,7 @@ Leggi [campi e mutazioni](../agency-os-operations/references/campi-e-mutazioni.m
 
 Risolvi agenzia, cliente/progetto e partecipanti; controlla duplicati e conflitti su tutti i calendari accessibili. Precompila titolo, tipo, data, orario, durata, fuso, luogo/link, partecipanti, agenda, obiettivi, materiali e promemoria. Non inventare disponibilità, invitati o link di videoconferenza.
 
-Se manca un dato obbligatorio, mostra tutto ciò che è già pronto e chiedi insieme i soli campi scoperti. La creazione in Agency OS non prova la sincronizzazione esterna: verifica l'ID calendario oppure dichiara che l'evento va aggiunto manualmente.
+Se manca un dato obbligatorio, mostra tutto ciò che è già pronto e chiedi insieme i soli campi scoperti. La creazione in Agency OS non prova la sincronizzazione esterna: verifica l'ID calendario e rileggi l'evento nel calendario corretto. Se la prova manca, dichiara la sincronizzazione non confermata e verifica il collegamento; non creare un duplicato manuale su Google Calendar come rimedio. Agency OS resta la fonte del meeting cliente.
 
 ## Modificare un meeting
 

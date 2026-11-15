@@ -22,7 +22,7 @@
 ## Calendario e meeting
 
 - Un calendario vuoto non prova che una giornata sia libera: dichiara quali calendari e finestre temporali sono stati letti.
-- Un meeting presente in Agency OS può non essere ancora sincronizzato su un calendario esterno. Non dichiarare la sincronizzazione senza identificativo esterno o rilettura del calendario.
+- Un meeting presente in Agency OS può non essere ancora sincronizzato su un calendario esterno. Verifica identificativo esterno e calendario corretto; se mancano prove dichiara la sincronizzazione non confermata, senza aggiungere manualmente un duplicato del meeting cliente.
 
 ## Chiusure e archiviazioni
 
