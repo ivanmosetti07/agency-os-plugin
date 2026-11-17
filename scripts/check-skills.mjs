@@ -14,6 +14,7 @@ const expected = [
   "meeting",
   "ped-social",
   "pianifica",
+  "presentazioni",
   "preventivo",
   "progetto",
   "report-cliente",

@@ -72,7 +72,7 @@ Le scritture producono gli stessi effetti della web app. `create_task`, `update_
 
 ## Skill
 
-Sono incluse `daily-brief`, `aggiorna-lavoro`, `pianifica`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook` e la base `agency-os-operations`.
+Sono incluse `daily-brief`, `aggiorna-lavoro`, `pianifica`, `task`, `progetto`, `cliente`, `business`, `preventivo`, `meeting`, `ped-social`, `report-cliente`, `strategia`, `brandbook`, `presentazioni` e la base `agency-os-operations`.
 
 Ogni skill di entità spiega separatamente creazione e modifica. Prima di chiedere dati, legge schema, contesto ed entità collegate e precompila tutti i campi risolvibili. I soli obbligatori ancora mancanti vengono chiesti insieme, senza inventare ID, assegnatari, date, importi o condizioni. La guida completa è in [docs/USO-SKILL.md](docs/USO-SKILL.md).
 
@@ -256,6 +256,16 @@ Catalogo `2026-10-29.5`, server `0.19.1` (414 tool). Le persone della rubrica si
 ## Orario di lavorazione obbligatorio — 1.15.2
 
 Catalogo `2026-10-29.6`, server `0.19.2`. `create_task` e `update_task` rifiutano un inizio di lavorazione senza la fine: la lavorazione ha sempre un orario. Le task vecchie senza fine restano modificabili negli altri campi. La skill `task` lo dice.
+
+## Presentazioni: workshop e corsi HTML — 1.26.0
+
+Catalogo `2026-11-17.1`, server `0.25.0`, 461 tool. Agency OS tiene workshop (una presentazione) e corsi (moduli → lezioni) fatti di pagine HTML che restano identiche all'originale, con i file sul Drive del progetto, un link pubblico, un link per ogni lezione e il codice iframe da mettere in un sito. Nuovi tool nel toolset `clients`:
+- struttura: `list_presentations`, `get_presentation`, `create_presentation`, `update_presentation`, `create_`/`update_`/`delete_presentation_module`, `create_`/`update_`/`delete_presentation_lesson`, `reorder_presentation_items`;
+- file: `upload_presentation_html` (fino a 3 MB), `create_presentation_upload` e `finalize_presentation_upload` (URL firmati per i file grandi e le cartelle);
+- testi e versioni: `get_presentation_texts`, `update_presentation_texts`, `list_presentation_versions`, `restore_presentation_version`;
+- condivisione: `get_presentation_share`, `set_presentation_sharing`, `regenerate_presentation_link`.
+
+Le eliminazioni e il nuovo link chiedono `confirm: true`. La nuova skill `presentazioni` guida la sequenza.
 
 ## Note in stile Apple Note — 1.23.1
 
